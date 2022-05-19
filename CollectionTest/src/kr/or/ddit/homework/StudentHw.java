@@ -1,4 +1,4 @@
-package kr.or.ddit.homework.CollectionFramework;
+package kr.or.ddit.homework;
 
 import java.util.ArrayList;
 import java.util.Collections;
