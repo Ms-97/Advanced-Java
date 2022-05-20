@@ -82,13 +82,12 @@ public class Hotel {
 	private void checkout() {
 		System.out.println("\n어느방을 체크아웃 하시겠습니까?");
 		System.out.print("방번호 입력 =>> ");
-		String room = sc.next();
+		String room = sc.nextLine();
 		
 		// remove(key) => 삭제 성공하면 삭제된 value값 반환,
 		//                삭제 실패시 null 반환함.
 		if(HotelMap.remove(room) == null) {
 			System.out.println(room + "방에는 체크인한 사람이 없습니다.\n");
-			sc.nextLine();
 		}else {
 			System.out.println("체크아웃 되었습니다");
 		}
