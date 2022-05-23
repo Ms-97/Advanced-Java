@@ -5,60 +5,59 @@ import java.util.LinkedList;
 public class T02StackQueueTest {
 	public static void main(String[] args) {
 	/*
-	 	Stack => ÈÄÀÔ¼±Ãâ(LIFO) ÀÚ·á±¸Á¶
-	 	Queue => ¼±ÀÔ¼±Ãâ(FIFO) ÀÚ·á±¸Á¶
-
-		Linkedlist¸¦ ÀÌ¿ëÇÑ ½ºÅÃ ¹× Å¥ ¿¹Á¦
+	 	Stack => í›„ì…ì„ ì¶œ(LIFO) ìë£Œêµ¬ì¡°
+	 	Queue => ì„ ì…ì„ ì¶œ(FIFO) ìë£Œêµ¬ì¡°
+		Linkedlistë¥¼ ì´ìš©í•œ ìŠ¤íƒ ë° í ì˜ˆì œ
 	*/
 		
 		LinkedList<String> stack = new LinkedList<String>();
 		
 		/*
-		  	StackÀÇ ¸í·É
-		  	1)ÀÚ·á ÀÔ·Â : push(ÀúÀåÇÒ°ª)
-		  	2)ÀÚ·á Ãâ·Â : pop() => ÀÚ·á¸¦ ²¨³»¿Â ÈÄ ²¨³»¿Â ÀÚ·á¸¦
-		  	 			           stack¿¡¼­ »èÁ¦ÇÑ´Ù.
+		  	Stackì˜ ëª…ë ¹
+		  	1)ìë£Œ ì…ë ¥ : push(ì €ì¥í• ê°’)
+		  	2)ìë£Œ ì¶œë ¥ : pop() => ìë£Œë¥¼ êº¼ë‚´ì˜¨ í›„ êº¼ë‚´ì˜¨ ìë£Œë¥¼
+		  	 			           stackì—ì„œ ì‚­ì œí•œë‹¤.
 		 */
-		stack.push("È«±æµ¿");
-		stack.push("ÀÏÁö¸Å");
-		stack.push("º¯ÇĞµµ");
-		stack.push("°­°¨Âù");
-		System.out.println("ÇöÀç stack°ªµé : "+ stack);
+		stack.push("í™ê¸¸ë™");
+		stack.push("ì¼ì§€ë§¤");
+		stack.push("ë³€í•™ë„");
+		stack.push("ê°•ê°ì°¬");
+		System.out.println("í˜„ì¬ stackê°’ë“¤ : "+ stack);
 		
 		String data = stack.pop();
-		System.out.println("²¨³»¿Â ÀÚ·á : " + data);
-		System.out.println("²¨³»¿Â ÀÚ·á : " + stack.pop());
-		System.out.println("²¨³»¿Â ÀÚ·á : " + stack);
+		System.out.println("êº¼ë‚´ì˜¨ ìë£Œ : " + data);
+		System.out.println("êº¼ë‚´ì˜¨ ìë£Œ : " + stack.pop());
+		System.out.println("êº¼ë‚´ì˜¨ ìë£Œ : " + stack);
 		
-		stack.push("¼ºÃáÇâ");
-		System.out.println("ÇöÀç stack°ªµé : "+ stack);
-		System.out.println("²¨³»¿Â ÀÚ·á : " + stack.pop());
+		stack.push("ì„±ì¶˜í–¥");
+		System.out.println("í˜„ì¬ stackê°’ë“¤ : "+ stack);
+		System.out.println("êº¼ë‚´ì˜¨ ìë£Œ : " + stack.pop());
 		System.out.println("=====================================");
 		System.out.println();
 		
 		LinkedList<String> queue = new LinkedList<String>();
 		/*
-		  	QueueÀÇ ¸í·É
-		  1) ÀÚ·á ÀÔ·Â : offer(ÀúÀåÇÒ°ª)
-		  2) ÀÚ·á Ãâ·Â : poll() => ÀÚ·á¸¦ Queue¿¡¼­ ²¨³»¿Â ÈÄ
-		  						²¨³»¿Â ÀÚ·á¸¦ Queue¿¡¼­ »èÁ¦µÈ´Ù.
+		  	Queueì˜ ëª…ë ¹
+		  1) ìë£Œ ì…ë ¥ : offer(ì €ì¥í• ê°’)
+		  2) ìë£Œ ì¶œë ¥ : poll() => ìë£Œë¥¼ Queueì—ì„œ êº¼ë‚´ì˜¨ í›„
+		  						êº¼ë‚´ì˜¨ ìë£Œë¥¼ Queueì—ì„œ ì‚­ì œëœë‹¤.
 		 */
-		queue.offer("È«±æµ¿");
-		queue.offer("ÀÏÁö¸Å");
-		queue.offer("º¯ÇĞµµ");
-		queue.offer("°­°¨Âù");
+		queue.offer("í™ê¸¸ë™");
+		queue.offer("ì¼ì§€ë§¤");
+		queue.offer("ë³€í•™ë„");
+		queue.offer("ê°•ê°ì°¬");
 		
-		System.out.println("ÇöÀç QueueÀÇ °ª : " + queue);
+		System.out.println("í˜„ì¬ Queueì˜ ê°’ : " + queue);
 		
 		String temp = queue.poll();
-		System.out.println("²¨³»¿Â ÀÚ·á : " + data);
-		System.out.println("²¨³»¿Â ÀÚ·á : " + queue.poll());
-		System.out.println("ÇöÀç QueueÀÇ °ª : " + stack);
+		System.out.println("êº¼ë‚´ì˜¨ ìë£Œ : " + data);
+		System.out.println("êº¼ë‚´ì˜¨ ìë£Œ : " + queue.poll());
+		System.out.println("í˜„ì¬ Queueì˜ ê°’ : " + stack);
 		
-		if(queue.offer("¼ºÃáÇâ")) {
-			System.out.println("½Å±Ô µî‹ ÀÚ·á : ¼ºÃáÇâ");
+		if(queue.offer("ì„±ì¶˜í–¥")) {
+			System.out.println("ì‹ ê·œ ë“±Â‹ ìë£Œ : ì„±ì¶˜í–¥");
 		}
-		System.out.println("ÇöÀç queueÀÇ °ª : " + queue);
-		System.out.println("²¨³»¿Â ÀÚ·á : " + queue.poll());
+		System.out.println("í˜„ì¬ queueì˜ ê°’ : " + queue);
+		System.out.println("êº¼ë‚´ì˜¨ ìë£Œ : " + queue.poll());
 	}
 }

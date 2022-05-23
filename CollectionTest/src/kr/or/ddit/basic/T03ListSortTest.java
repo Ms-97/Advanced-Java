@@ -7,57 +7,57 @@ import java.util.List;
 
 public class T03ListSortTest {
 /*
- 	Á¤·Ä°ú °ü·ÃµÈ Interface´Â Comparable°ú Comparator ÀÌ·¸°Ô µÎ°¡Áö°¡ ÀÖ´Ù.
+ 	ì •ë ¬ê³¼ ê´€ë ¨ëœ InterfaceëŠ” Comparableê³¼ Comparator ì´ë ‡ê²Œ ë‘ê°€ì§€ê°€ ìˆë‹¤.
  	
- 	- º¸Åë °´Ã¼ÀÚÃ¼¿¡ Á¤·Ä±â´ÉÀ» ³Ö±â À§ÇØ¼­´Â ComparableÀ» ±¸ÇöÇÏ°í
- 	  Á¤·Ä ±âÁØÀ» º°µµ·Î ±¸ÇüÇÏ°í ½ÍÀ» ¶§´Â Comparator¸¦ ±¸ÇöÇÏ¿© »ç¿ëÇÏ¸é µÈ´Ù.
+ 	- ë³´í†µ ê°ì²´ìì²´ì— ì •ë ¬ê¸°ëŠ¥ì„ ë„£ê¸° ìœ„í•´ì„œëŠ” Comparableì„ êµ¬í˜„í•˜ê³ 
+ 	  ì •ë ¬ ê¸°ì¤€ì„ ë³„ë„ë¡œ êµ¬í˜•í•˜ê³  ì‹¶ì„ ë•ŒëŠ” Comparatorë¥¼ êµ¬í˜„í•˜ì—¬ ì‚¬ìš©í•˜ë©´ ëœë‹¤.
  	  
- 	  -Comparable¿¡¼­´Â compareTo()¸¦ ±¸ÇöÇØ¾ß ÇÏ°í,
- 	   Comparator¿¡¼­´Â compare()¸¦ ±¸ÇöÇØ¾ß ÇÑ´Ù.
+ 	  -Comparableì—ì„œëŠ” compareTo()ë¥¼ êµ¬í˜„í•´ì•¼ í•˜ê³ ,
+ 	   Comparatorì—ì„œëŠ” compare()ë¥¼ êµ¬í˜„í•´ì•¼ í•œë‹¤.
  */
 	public static void main(String[] args) {
 		List<String> list = new ArrayList<String>();
 		
-		list.add("ÀÏÁö¸Å");
-		list.add("È«±æµ¿");
-		list.add("¼ºÃáÇâ");
-		list.add("º¯ÇĞµµ");
-		list.add("ÀÌ¼ø½Å");
+		list.add("ì¼ì§€ë§¤");
+		list.add("í™ê¸¸ë™");
+		list.add("ì„±ì¶˜í–¥");
+		list.add("ë³€í•™ë„");
+		list.add("ì´ìˆœì‹ ");
 		
-		System.out.println("Á¤·Ä Àü : " + list);
+		System.out.println("ì •ë ¬ ì „ : " + list);
 	
 	/*
-	  Á¤·ÄÀº Collections.sort()¸¦ ÀÌ¿ëÇÏ¿© Á¤·ÄÇÑ´Ù.
-	  Á¤·ÄÀº ±âº»ÀûÀ¸·Î '¿À¸§Â÷¼ø'Á¤·ÄÀ» ¼öÇàÇÑ´Ù.
+	  ì •ë ¬ì€ Collections.sort()ë¥¼ ì´ìš©í•˜ì—¬ ì •ë ¬í•œë‹¤.
+	  ì •ë ¬ì€ ê¸°ë³¸ì ìœ¼ë¡œ 'ì˜¤ë¦„ì°¨ìˆœ'ì •ë ¬ì„ ìˆ˜í–‰í•œë‹¤.
 	  
-	  Á¤·Ä¹æ½ÄÀ» º¯°æÇÏ·Á¸é Á¤·Ä¹æ½ÄÀ» °áÁ´ÇÏ´Â °´Ã¼¸¦ ¸¸µé¾î¼­
-	  Collections.sort()¸Ş¼ÒµåÀÇ ÀÎ¼ö·Î ³Ñ°ÜÁÖ¸é µÈ´Ù.
+	  ì •ë ¬ë°©ì‹ì„ ë³€ê²½í•˜ë ¤ë©´ ì •ë ¬ë°©ì‹ì„ ê²°ì¡í•˜ëŠ” ê°ì²´ë¥¼ ë§Œë“¤ì–´ì„œ
+	  Collections.sort()ë©”ì†Œë“œì˜ ì¸ìˆ˜ë¡œ ë„˜ê²¨ì£¼ë©´ ëœë‹¤.
 	 */
-		Collections.sort(list); //¿À¸§Â÷¼ø Á¤·ÄÇÏ±â
-		System.out.println("Á¤·Ä ÈÄ : " + list);
+		Collections.sort(list); //ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬í•˜ê¸°
+		System.out.println("ì •ë ¬ í›„ : " + list);
 		
-		Collections.shuffle(list); //¼¯±â
+		Collections.shuffle(list); //ì„ê¸°
 		
-		//¿ÜºÎÁ¤·ÄÀÚ¸¦ ÀÌ¿ëÇÑ ¸®½ºÆ® Á¤·Ä
+		//ì™¸ë¶€ì •ë ¬ìë¥¼ ì´ìš©í•œ ë¦¬ìŠ¤íŠ¸ ì •ë ¬
 		Collections.sort(list, new Desc());
-		System.out.println("¿ÜºÎÁ¤·ÄÀÚ ÀÌ¿ëÇÑ Á¤·Ä ÈÄ : "+list);
+		System.out.println("ì™¸ë¶€ì •ë ¬ì ì´ìš©í•œ ì •ë ¬ í›„ : "+list);
 	}
 }
 
 /*
-  Á¤·Ä¹æ½ÄÀ» °áÁ¤ÇÏ´Â calss´Â Comparator¶ó´Â ÀÎÅÍÆäÀÌ½º¸¦ ±¸ÇöÇØ¾ß ÇÑ´Ù.
-  ÀÌ ComparatorÀÎÅÍÆäÀÌ½ºÀÇ compare() ¸Ş¼Òµå¸¦ ÀçÁ¤ÀÇÇÏ¿© ±¸ÇöÇÏ¸é µÈ´Ù.
+  ì •ë ¬ë°©ì‹ì„ ê²°ì •í•˜ëŠ” calssëŠ” Comparatorë¼ëŠ” ì¸í„°í˜ì´ìŠ¤ë¥¼ êµ¬í˜„í•´ì•¼ í•œë‹¤.
+  ì´ Comparatorì¸í„°í˜ì´ìŠ¤ì˜ compare() ë©”ì†Œë“œë¥¼ ì¬ì •ì˜í•˜ì—¬ êµ¬í˜„í•˜ë©´ ëœë‹¤.
  */
 class Desc implements Comparator<String> {
 
 	@Override
 	public int compare(String str1, String str2) {
-/*  compare()ÀÇ ¹İÈ¯°ªÀ» °áÁ¤ÇÏ´Â ¹æ¹ı
- 	=> ¿À¸§Â÷¼øÀÌ ±âº»ÀÓ.
+/*  compare()ì˜ ë°˜í™˜ê°’ì„ ê²°ì •í•˜ëŠ” ë°©ë²•
+ 	=> ì˜¤ë¦„ì°¨ìˆœì´ ê¸°ë³¸ì„.
  	
- 	- ¿À¸§Â÷¼ø Á¤·ÄÀÌ °æ¿ì...
- 	=> ¾ÕÀÇ °ªÀÌ Å©¸é ¾ç¼ö, °°À¸¸é , ¾ÕÀÇ °ªÀÌ ÀÛÀ¸¸é À½¼ö¸¦ ¹İÈ¯ÇÏµµ·Ï
- 	   ±¸ÇöÇÑ´Ù.
+ 	- ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬ì´ ê²½ìš°...
+ 	=> ì•ì˜ ê°’ì´ í¬ë©´ ì–‘ìˆ˜, ê°™ìœ¼ë©´ , ì•ì˜ ê°’ì´ ì‘ìœ¼ë©´ ìŒìˆ˜ë¥¼ ë°˜í™˜í•˜ë„ë¡
+ 	   êµ¬í˜„í•œë‹¤.
  */
 		
 		return str1.compareTo(str2) * -1;

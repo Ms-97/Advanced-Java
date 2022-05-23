@@ -7,7 +7,7 @@ public class T01ArrayListTest {
 	public static void main(String[] args) {
 		List list1 = new ArrayList();
 		
-		//add()¸Ş¼Òµå¸¦ »ç¿ëÇØ¼­ µ¥ÀÌÅÍ¸¦Ãß°¡ÇÑ´Ù.
+		//add()ë©”ì†Œë“œë¥¼ ì‚¬ìš©í•´ì„œ ë°ì´í„°ë¥¼ì¶”ê°€í•œë‹¤.
 		list1.add("aaa");
 		list1.add("bbb");
 		list1.add(new Integer(111));
@@ -17,34 +17,34 @@ public class T01ArrayListTest {
 		
 		
 		
-		//size() => µ¥ÀÌÅÍ °´¼ö
+		//size() => ë°ì´í„° ê°ìˆ˜
 		System.out.println("size => " + list1.size());
 		
-		//get()À¸·Î µ¥ÀÌÅÍ ²¨³»¿À±â
-		System.out.println("1¹øÂ° ÀÚ·á : "+ list1.get(0));
+		//get()ìœ¼ë¡œ ë°ì´í„° êº¼ë‚´ì˜¤ê¸°
+		System.out.println("1ë²ˆì§¸ ìë£Œ : "+ list1.get(0));
 		
-		//µ¥ÀÌÅÍ ³¢¿ö³Ö±âµµ °°´Ù.
+		//ë°ì´í„° ë¼ì›Œë„£ê¸°ë„ ê°™ë‹¤.
 		list1.add(0,"zzz");
 		System.out.println("list1 => "+list1);
 		
-		//µ¥ÀÌÅÍ º¯°æÇÏ±â(set¸Ş¼Òµå)
+		//ë°ì´í„° ë³€ê²½í•˜ê¸°(setë©”ì†Œë“œ)
 		String temp = (String) list1.set(0, "yyy");
 		System.out.println("temp => " + temp);
 		System.out.println("list1 => " + list1);
 		
-		// »èÁ¦ÇÏ±âµµ °°´Ù.
+		// ì‚­ì œí•˜ê¸°ë„ ê°™ë‹¤.
 		list1.remove(0);
-		System.out.println("»èÁ¦ ÈÄ : "+list1);
+		System.out.println("ì‚­ì œ í›„ : "+list1);
 
 		list1.remove("bbb");
-		System.out.println("bbb »èÁ¦ ÈÄ : "+list1);
+		System.out.println("bbb ì‚­ì œ í›„ : "+list1);
 		
 		list1.remove(new Integer(111));
-		System.out.println("111 »èÁ¦ ÈÄ : "+list1);
+		System.out.println("111 ì‚­ì œ í›„ : "+list1);
 		System.out.println("==============================");
 		
 		
-		//Á¦³Ê¸¯À» ÁöÁ¤ÇÏ¿© ¼±¾ğÇÒ ¼ö ÀÖ´Ù.
+		//ì œë„ˆë¦­ì„ ì§€ì •í•˜ì—¬ ì„ ì–¸í•  ìˆ˜ ìˆë‹¤.
 		List<String> list2 = new ArrayList<String>();
 		list2.add("AAA");
 		list2.add("BBB");
@@ -57,28 +57,28 @@ public class T01ArrayListTest {
 		}
 		System.out.println("------------------------------");
 		
-		//contains(ºñ±³°´Ã¼); => ¸®½ºÆ®¿¡ 'ºñ±³°´Ã¼'°¡ ÀÖÀ¸¸é true
-		//                       ±×·¸Áö ¾ÊÀ¸¸é false°¡ ¹İÈ¯µÊ.
+		//contains(ë¹„êµê°ì²´); => ë¦¬ìŠ¤íŠ¸ì— 'ë¹„êµê°ì²´'ê°€ ìˆìœ¼ë©´ true
+		//                       ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ falseê°€ ë°˜í™˜ë¨.
 		System.out.println(list2.contains("DDD"));
 		System.out.println(list2.contains("ZZZ"));
 		
-		// indexof(ºñ±³°´Ã¼); => ¸®½ºÆ®¿¡¼­ 'ºñ±³°´Ã¼'¸¦ Ã£¾Æ 'ºñ±³°´Ã¼'°¡
-	 	//                       Á¸ÀçÇÏ´Â index°ªÀ» ¹İÈ¯ÇÑ´Ù.
-		//                       ¸®½ºÆ®¿¡ Á¸ÀçÇÏÁö¾ÊÀ¸¸é -1À» ¹İÈ¯ÇÑ´Ù.
-		System.out.println("DDDÀÇ index°ª : "+ list2.indexOf("DDD"));
-		System.out.println("ZZZÀÇ index°ª : "+ list2.indexOf("ZZZ"));
+		// indexof(ë¹„êµê°ì²´); => ë¦¬ìŠ¤íŠ¸ì—ì„œ 'ë¹„êµê°ì²´'ë¥¼ ì°¾ì•„ 'ë¹„êµê°ì²´'ê°€
+	 	//                       ì¡´ì¬í•˜ëŠ” indexê°’ì„ ë°˜í™˜í•œë‹¤.
+		//                       ë¦¬ìŠ¤íŠ¸ì— ì¡´ì¬í•˜ì§€ì•Šìœ¼ë©´ -1ì„ ë°˜í™˜í•œë‹¤.
+		System.out.println("DDDì˜ indexê°’ : "+ list2.indexOf("DDD"));
+		System.out.println("ZZZì˜ indexê°’ : "+ list2.indexOf("ZZZ"));
 		System.out.println("------------------------------");
 		
-		// toArray() => ¸®½ºÆ®¾ÈÀÇ µ¥ÀÌÅÍµéÀ» ¹è¿­·Î º¯È¯ÇÏ¿© ¹İÈ¯ÇÑ´Ù.
-		//           => ±âº»ÀûÀ¸·Î ObjectÇü ¹è¿­·Î ¹İÈ¯ÇÑ´Ù.
+		// toArray() => ë¦¬ìŠ¤íŠ¸ì•ˆì˜ ë°ì´í„°ë“¤ì„ ë°°ì—´ë¡œ ë³€í™˜í•˜ì—¬ ë°˜í™˜í•œë‹¤.
+		//           => ê¸°ë³¸ì ìœ¼ë¡œ Objectí˜• ë°°ì—´ë¡œ ë°˜í™˜í•œë‹¤.
 		Object[] strArr = list2.toArray();
 		String[] srtArr1 = list2.toArray(new String[0]);
-		System.out.println("¹è¿­ÀÇ °¹¼ö : " + strArr.length);
+		System.out.println("ë°°ì—´ì˜ ê°¯ìˆ˜ : " + strArr.length);
 		
 		for(int i=0; i<list2.size(); i++) {
 			list2.remove(i);
 		}
-		System.out.println("list2ÀÇ Å©±â : "+ list2.size());
+		System.out.println("list2ì˜ í¬ê¸° : "+ list2.size());
 		
 	}
 }

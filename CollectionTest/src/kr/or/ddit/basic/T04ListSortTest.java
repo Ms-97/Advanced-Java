@@ -11,21 +11,21 @@ public final class T04ListSortTest {
 	public static void main(String[] args) {
 		List<Member> memList = new ArrayList<Member>();
 		
-		memList.add(new Member(1, "È«±æµ¿", "010-1111-1111"));
-		memList.add(new Member(5, "º¯ÇĞµµ", "010-2222-1111"));
-		memList.add(new Member(9, "¼ºÃáÇâ", "010-3333-1111"));
-		memList.add(new Member(3, "ÀÌ¼ø½Å", "010-4444-1111"));
-		memList.add(new Member(6, "°­°¨Âù", "010-5555-1111"));
-		memList.add(new Member(2, "ÀÏÁö¸Å", "010-6666-1111"));
+		memList.add(new Member(1, "í™ê¸¸ë™", "010-1111-1111"));
+		memList.add(new Member(5, "ë³€í•™ë„", "010-2222-1111"));
+		memList.add(new Member(9, "ì„±ì¶˜í–¥", "010-3333-1111"));
+		memList.add(new Member(3, "ì´ìˆœì‹ ", "010-4444-1111"));
+		memList.add(new Member(6, "ê°•ê°ì°¬", "010-5555-1111"));
+		memList.add(new Member(2, "ì¼ì§€ë§¤", "010-6666-1111"));
 		
-		System.out.println("Á¤·Ä Àü");
+		System.out.println("ì •ë ¬ ì „");
 		for(Member mem : memList) {
 			System.out.println(mem);
 		}
 		System.out.println("---------------------------");
-		Collections.sort(memList);///Á¤·ÄÇÏ±â
+		Collections.sort(memList);///ì •ë ¬í•˜ê¸°
 		
-		System.out.println("Á¤·Ä ÈÄ(ÀÌ¸§ÀÇ ¿À¸§Â÷¼ø) :");
+		System.out.println("ì •ë ¬ í›„(ì´ë¦„ì˜ ì˜¤ë¦„ì°¨ìˆœ) :");
 		for(Member mem : memList) {
 			System.out.println(mem);
 		}
@@ -33,15 +33,15 @@ public final class T04ListSortTest {
 		
 		Collections.sort(memList, new SortNumDesc());
 		
-		System.out.println("Á¤·Ä ÈÄ(¹øÈ£ÀÇ ¿À¸§Â÷¼ø) :");
+		System.out.println("ì •ë ¬ í›„(ë²ˆí˜¸ì˜ ì˜¤ë¦„ì°¨ìˆœ) :");
 		for(Member mem : memList) {
 			System.out.println(mem);
 		}
 	}
 }
 /*
- * ¿ÜºÎ Á¤·ÄÀÚ Å¬·¡½º
- * (MemberÀÇ ¹øÈ£ (Num)ÀÇ ³»¸²Â÷¼øÀ¸·Î Á¤·ÄÇÏ±â)
+ * ì™¸ë¶€ ì •ë ¬ì í´ë˜ìŠ¤
+ * (Memberì˜ ë²ˆí˜¸ (Num)ì˜ ë‚´ë¦¼ì°¨ìˆœìœ¼ë¡œ ì •ë ¬í•˜ê¸°)
  */
 class SortNumDesc implements Comparator<Member>{
 
@@ -66,15 +66,15 @@ class SortNumDesc implements Comparator<Member>{
 
 /**
  * 
- * È¸¿øÀÇ Á¤º¸¸¦ ÀúÀåÇÒ Å¬·¡½º
- * (È¸¿øÀÌ¸§À»±âÁØÀ¸·Î ¿À¸§Â÷¼øÁ¤·ÉÀÌ µÉ ¼ö ÀÖ´Â Å¬·¡½º »ı¼ºÇÏ±â)
+ * íšŒì›ì˜ ì •ë³´ë¥¼ ì €ì¥í•  í´ë˜ìŠ¤
+ * (íšŒì›ì´ë¦„ì„ê¸°ì¤€ìœ¼ë¡œ ì˜¤ë¦„ì°¨ìˆœì •ë ¹ì´ ë  ìˆ˜ ìˆëŠ” í´ë˜ìŠ¤ ìƒì„±í•˜ê¸°)
  *
  */
 class Member implements Comparable<Member>{
 
-	private int num; //¹øÈ£
-	private String name; //ÀÌ¸§
-	private String tel; //ÀüÈ­¹øÈ£
+	private int num; //ë²ˆí˜¸
+	private String name; //ì´ë¦„
+	private String tel; //ì „í™”ë²ˆí˜¸
 	
 	
 
