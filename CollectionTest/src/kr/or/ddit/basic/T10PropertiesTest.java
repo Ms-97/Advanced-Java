@@ -7,32 +7,32 @@ import java.util.Properties;
 
 public class T10PropertiesTest {
 /*
-   Properties´Â Mapº¸´Ù Ãà¼ÒµÈ ±â´ÉÀÇ °´Ã¼¶ó°í ÇÒ ¼ö ÀÖ´Ù.
-   MapÀº ¸ğµç ÇüÅÂÀÇ °´Ã¼ µ¥ÀÌÅÍ¸¦ key¿Í value°ªÀ¸·Î »ç¿ëÇÒ ¼ö ÀÖÁö¸¸
-   Properties´Â key¿Í value°ªÀ¸·Î String¸¸ »ç¿ëÇÒ ¼ö ÀÖ´Ù.
+   PropertiesëŠ” Mapë³´ë‹¤ ì¶•ì†Œëœ ê¸°ëŠ¥ì˜ ê°ì²´ë¼ê³  í•  ìˆ˜ ìˆë‹¤.
+   Mapì€ ëª¨ë“  í˜•íƒœì˜ ê°ì²´ ë°ì´í„°ë¥¼ keyì™€ valueê°’ìœ¼ë¡œ ì‚¬ìš©í•  ìˆ˜ ìˆì§€ë§Œ
+   PropertiesëŠ” keyì™€ valueê°’ìœ¼ë¡œ Stringë§Œ ì‚¬ìš©í•  ìˆ˜ ìˆë‹¤.
    
-   	MapÀº put(), get() ¸Ş¼Òµå¸¦ ÀÌ¿ëÇÏ¿© µ¥ÀÌÅÍ¸¦ ÀÔÃâ·Â ÇÏÁö¸¸,
-   	Properties´Â setProperty(), getProperty()¸Ş¼Òµå¸¦ ÀÌ¿ëÇØ¼­
-   	µ¥ÀÌÅÍ¸¦ ÀÔÃâ·Â ÇÑ´Ù.
+   	Mapì€ put(), get() ë©”ì†Œë“œë¥¼ ì´ìš©í•˜ì—¬ ë°ì´í„°ë¥¼ ì…ì¶œë ¥ í•˜ì§€ë§Œ,
+   	PropertiesëŠ” setProperty(), getProperty()ë©”ì†Œë“œë¥¼ ì´ìš©í•´ì„œ
+   	ë°ì´í„°ë¥¼ ì…ì¶œë ¥ í•œë‹¤.
  */
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		Properties prop = new Properties();
 		
-		prop.setProperty("name", "È«±æµ¿");
+		prop.setProperty("name", "í™ê¸¸ë™");
 		prop.setProperty("tel", "010-1234-5678");
-		prop.setProperty("addr", "´ëÀü");
+		prop.setProperty("addr", "ëŒ€ì „");
 		
 		String name = prop.getProperty("name");
 		String tel = prop.getProperty("tel");
 		
-		System.out.println("ÀÌ¸§ : " + name);
-		System.out.println("ÀüÈ­ : " + tel);
-		System.out.println("ÁÖ¼Ò : " + prop.getProperty("addr"));
+		System.out.println("ì´ë¦„ : " + name);
+		System.out.println("ì „í™” : " + tel);
+		System.out.println("ì£¼ì†Œ : " + prop.getProperty("addr"));
 		
-		//³»¿ëÀ» ÆÄÀÏ·Î ÀúÀåÇÏ±â
+		//ë‚´ìš©ì„ íŒŒì¼ë¡œ ì €ì¥í•˜ê¸°
 		prop.store(
 				new FileOutputStream(
 						"src/kr/or/ddit/basic/test.properties"),
-					    "ÄÚ¸àÆ®ÀÔ´Ï´Ù. ");
+					    "ì½”ë©˜íŠ¸ì…ë‹ˆë‹¤. ");
 	}
 }

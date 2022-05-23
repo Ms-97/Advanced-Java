@@ -7,39 +7,39 @@ import java.util.Set;
 
 public class T08MapTest {
 	/*
-	 * Map => key°ª°ú value°ªÀ» ÇÑ ½ÖÀ¸·Î °ü¸®ÇÏ´Â °´Ã¼ key°ªÀº Áßº¹À¸ Çã¿ëÇÏÁö ¾Ê°í ¼ø¼­°¡ ¾ø´Ù.(SetÀÇ Æ¯Â¡) value°ªÀº
-	 *         Áßº¹À» Çã¿ëÇÑ´Ù.(ListÀÇ Æ¯Â¡)
+	 * Map => keyê°’ê³¼ valueê°’ì„ í•œ ìŒìœ¼ë¡œ ê´€ë¦¬í•˜ëŠ” ê°ì²´ keyê°’ì€ ì¤‘ë³µìœ¼ í—ˆìš©í•˜ì§€ ì•Šê³  ìˆœì„œê°€ ì—†ë‹¤.(Setì˜ íŠ¹ì§•) valueê°’ì€
+	 *         ì¤‘ë³µì„ í—ˆìš©í•œë‹¤.(Listì˜ íŠ¹ì§•)
 	 */
 	public static void main(String[] args) {
 		Map<String, String> map = new HashMap<String, String>();
 
-		// ÀÚ·áÃß°¡ =>put(key°ª, value°ª);
-		map.put("name", "È«±æµ¿");
-		map.put("addr", "´ëÀü");
+		// ìë£Œì¶”ê°€ =>put(keyê°’, valueê°’);
+		map.put("name", "í™ê¸¸ë™");
+		map.put("addr", "ëŒ€ì „");
 		map.put("tel", "010-1234-5678");
 
 		System.out.println("map => " + map);
 
-		// ÀÚ·á ¼öÁ¤ => µ¥ÀÌÅÍ¸¦ ÀúÀåÇÒ ¶§ key°ªÀÌ °°À¸¸é ³ªÁß¿¡ ÀÔ·ÂÇÑ °ªÀÌ
-		//              ÀúÀåµÈ´Ù. put(¼öÁ¤ÇÒkey°ª, »õ·Î¿îvalue°ª);
-		map.put("addr", "¼­¿ï");
+		// ìë£Œ ìˆ˜ì • => ë°ì´í„°ë¥¼ ì €ì¥í•  ë•Œ keyê°’ì´ ê°™ìœ¼ë©´ ë‚˜ì¤‘ì— ì…ë ¥í•œ ê°’ì´
+		//              ì €ì¥ëœë‹¤. put(ìˆ˜ì •í• keyê°’, ìƒˆë¡œìš´valueê°’);
+		map.put("addr", "ì„œìš¸");
 		System.out.println("map => " + map);
 
-		// ÀÚ·á »èÁ¦ => remove(»èÁ¦ÇÒ key°ª);
+		// ìë£Œ ì‚­ì œ => remove(ì‚­ì œí•  keyê°’);
 		map.remove("name");
 		System.out.println("map => " + map);
 
-		// ÀÚ·á ÀĞ±â => get(key°ª);
+		// ìë£Œ ì½ê¸° => get(keyê°’);
 		System.out.println("addr => " + map.get("addr"));
 		System.out.println("=============================");
 
-		// key °ªµéÀ» ÀĞ¾î¿Í ÀÚ·á¸¦ Ãâ·ÂÇÏ´Â ¹æ¹ı
+		// key ê°’ë“¤ì„ ì½ì–´ì™€ ìë£Œë¥¼ ì¶œë ¥í•˜ëŠ” ë°©ë²•
 
-		// ¹æ¹ı1 => keySet() ÀÌ¿ëÇÏ±â
-		// keySet()¸Ş¼­µå => MapÀÇ key°ªµé¸¸ ÀĞ¾î¿Í SetÇüÀ¸·Î ¹İÈ¯ÇÑ´Ù.
+		// ë°©ë²•1 => keySet() ì´ìš©í•˜ê¸°
+		// keySet()ë©”ì„œë“œ => Mapì˜ keyê°’ë“¤ë§Œ ì½ì–´ì™€ Setí˜•ìœ¼ë¡œ ë°˜í™˜í•œë‹¤.
 		Set<String> keySet = map.keySet();
 
-		System.out.println("Iterator¸¦ ÀÌ¿ëÇÑ ¹æ¹ı");
+		System.out.println("Iteratorë¥¼ ì´ìš©í•œ ë°©ë²•");
 		Iterator<String> it = keySet.iterator();
 		while (it.hasNext()) {
 			String key = it.next();
@@ -47,33 +47,33 @@ public class T08MapTest {
 		}
 		System.out.println("-----------------------------");
 
-		// ¹æ¹ı2 => SetÇüÀÇ µ¥ÀÌÅÍ¸¦ 'Çâ»óµÈ for¹®'À¸·Î Ã³¸®ÇÏ¸é Iterator¸¦
-		//          »ç¿ëÇÏÁö ¾Ê¾Æµµ µÈ´Ù.
-		System.out.println("Çâ»óµÈ for¹®À» ÀÌ¿ëÇÏ´Â ¹æ¹ı");
+		// ë°©ë²•2 => Setí˜•ì˜ ë°ì´í„°ë¥¼ 'í–¥ìƒëœ forë¬¸'ìœ¼ë¡œ ì²˜ë¦¬í•˜ë©´ Iteratorë¥¼
+		//          ì‚¬ìš©í•˜ì§€ ì•Šì•„ë„ ëœë‹¤.
+		System.out.println("í–¥ìƒëœ forë¬¸ì„ ì´ìš©í•˜ëŠ” ë°©ë²•");
 		for (String key : keySet) {
 			System.out.println(key + " : " + map.get(key));
 		}
 		System.out.println("------------------------------");
 
-		// ¹æ¹ı3 => value°ª¸¸ ÀĞ¾î¿Í Ãâ·ÂÇÏ±â => values() ÀÌ¿ë
-		System.out.println("values() ÀÌ¿ëÇÑ ¹æ¹ı");
+		// ë°©ë²•3 => valueê°’ë§Œ ì½ì–´ì™€ ì¶œë ¥í•˜ê¸° => values() ì´ìš©
+		System.out.println("values() ì´ìš©í•œ ë°©ë²•");
 		for (String value : map.values()) {
 			System.out.println(value);
 		}
 		System.out.println("-------------------------------");
 
-		// ¹æ¹ı4 => Map°ü·Ã Å¬·¡½º¿¡´Â Map.EntryÅ¸ÀÔÀÇ ³»ºÎ class°¡
-		//          ¸¸µé¾îÁ® ÀÖ´Ù. ÀÌ ³»ºÎ Å¬·¡½º´Â key¿Í value¶ó´Â ¸â¹öº¯¼ö·Î
-		//          ±¸¼ºµÇ¾î ÀÖ´Ù. Map¿¡¼­ ÀÌ Map.EntryÅ¸ÀÔÀÇ °´Ã¼µéÀ» SetÇüÀ¸·Î
-		//          °¡Á®¿Ã ¼ö ÀÖ´Ù. => entrySet() ¸Ş¼­µå ÀÌ¿ë
+		// ë°©ë²•4 => Mapê´€ë ¨ í´ë˜ìŠ¤ì—ëŠ” Map.Entryíƒ€ì…ì˜ ë‚´ë¶€ classê°€
+		//          ë§Œë“¤ì–´ì ¸ ìˆë‹¤. ì´ ë‚´ë¶€ í´ë˜ìŠ¤ëŠ” keyì™€ valueë¼ëŠ” ë©¤ë²„ë³€ìˆ˜ë¡œ
+		//          êµ¬ì„±ë˜ì–´ ìˆë‹¤. Mapì—ì„œ ì´ Map.Entryíƒ€ì…ì˜ ê°ì²´ë“¤ì„ Setí˜•ìœ¼ë¡œ
+		//          ê°€ì ¸ì˜¬ ìˆ˜ ìˆë‹¤. => entrySet() ë©”ì„œë“œ ì´ìš©
 		Set<Map.Entry<String, String>> mapSet = map.entrySet();
 
-		// °¡Á®¿Â Entry°´Ã¼µéÀ» ¼ø¼­´ë·Î Ã³¸®ÇÏ±â À§ÇØ¼­ Iterator°´Ã¼·Î ¹İÈ¯
+		// ê°€ì ¸ì˜¨ Entryê°ì²´ë“¤ì„ ìˆœì„œëŒ€ë¡œ ì²˜ë¦¬í•˜ê¸° ìœ„í•´ì„œ Iteratorê°ì²´ë¡œ ë°˜í™˜
 		Iterator<Map.Entry<String, String>> entryIt = mapSet.iterator();
 		while (entryIt.hasNext()) {
 			Map.Entry<String, String> entry = entryIt.next();
-			System.out.println("key°ª : " + entry.getKey());
-			System.out.println("value°ª : " + entry.getValue());
+			System.out.println("keyê°’ : " + entry.getKey());
+			System.out.println("valueê°’ : " + entry.getValue());
 			System.out.println();
 		}
 
