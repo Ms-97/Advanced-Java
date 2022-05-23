@@ -65,6 +65,7 @@ public class T08EnumTest {
 		System.out.println("myCity2의 ordinal : " + myCity2.ordinal());
 		System.out.println("=============================================");
 		
+		
 		Season ss = Season.valueOf("여름");
 		System.out.println("name => " + ss.name());
 		System.out.println("ordinal => " + ss.ordinal());
