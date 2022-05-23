@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * »óÇÑ ¹× ÇÏÇÑ Á¦ÇÑ ¿ÍÀÏµå Ä«µå ¿¹Á¦
+ * ìƒí•œ ë° í•˜í•œ ì œí•œ ì™€ì¼ë“œ ì¹´ë“œ ì˜ˆì œ
  * @author user
  *
  */
 public class T07wildCardTest {
 	/**
-	 * È¸¿øÁ¤º¸ Ãâ·Â
+	 * íšŒì›ì •ë³´ ì¶œë ¥
 	 **/
 	public void printMemberInfo(List<? extends Member> list) {
 		/*
-		   extends Å°¿öµå¸¦ ÀÌ¿ëÇÑ »óÇÑ Á¦ÇÑ(Upper Bounds) ¿¹Á¦
-		   list ¾ÈÀÇ °´Ã¼´Â ¹İµå½Ã MemberÅ¸ÀÔÀÇ °´Ã¼ÀÓÀ» º¸Àå ÇÒ ¼ö ÀÖ´Ù.
+		   extends í‚¤ì›Œë“œë¥¼ ì´ìš©í•œ ìƒí•œ ì œí•œ(Upper Bounds) ì˜ˆì œ
+		   list ì•ˆì˜ ê°ì²´ëŠ” ë°˜ë“œì‹œ Memberíƒ€ì…ì˜ ê°ì²´ì„ì„ ë³´ì¥ í•  ìˆ˜ ìˆë‹¤.
 		 */
 		
 			for(Member mem : list) {
@@ -24,37 +24,37 @@ public class T07wildCardTest {
 	}
 	public void printMemberInfo2(List<? super Member> list) {
 		/*
-		    super Å°¿öµå¸¦ ÀÌ¿ëÇÑ ÇÏÇÑ Á¦ÇÑ(Lower Bounds)
-		    Member Å¸ÀÔÀÇ º¯¼ö¸¦ ÀÌ¿ëÇÏ¿© List·ÎºÎÅÍ °´Ã¼¸¦ ²¨³»¿Ã ¼ö ¾ø´Ù.
+		    super í‚¤ì›Œë“œë¥¼ ì´ìš©í•œ í•˜í•œ ì œí•œ(Lower Bounds)
+		    Member íƒ€ì…ì˜ ë³€ìˆ˜ë¥¼ ì´ìš©í•˜ì—¬ Listë¡œë¶€í„° ê°ì²´ë¥¼ êº¼ë‚´ì˜¬ ìˆ˜ ì—†ë‹¤.
 		 */
-//			for(Member obj : list) { //ÄÄÆÄÀÏ ¿¡·¯ ¹ß»ı
+//			for(Member obj : list) { //ì»´íŒŒì¼ ì—ëŸ¬ ë°œìƒ
 //				System.out.println(obj);
 //			}
 	}
 	
 	/**
-	 * È¸¿ø Á¤º¸ µî·Ï
+	 * íšŒì› ì •ë³´ ë“±ë¡
 	 * @param list
 	 */
 	public void registerMemberInfo(List<? extends Member> list) {
 		/*
-		   	Member Å¸ÀÔÀÇ °´Ã¼¶ó°í Ç×»ó list¿¡ Ãß°¡ÇÒ ¼ö ÀÖÀ½À» º¸ÀåÇÒ ¼ö ¾ø´Ù.
-		   	(MemberÅ¸ÀÔ ¶Ç´Â Member¸¦ »ó¼ÓÇÑ ±× ¾î¶² Å¸ÀÔÀ» ÀÇ¹ÌÇÏ¹Ç·Î ¾ÆÁ÷ ±¸Ã¼ÀûÀÎ Å¸ÀÔÀÌ
-		   	Á¤ÇØÁöÁö ¾Ê¾Ò´Ù. => ÄÄÆÄÀÏ ¿¡·¯ ¹ß»ı)
+		   	Member íƒ€ì…ì˜ ê°ì²´ë¼ê³  í•­ìƒ listì— ì¶”ê°€í•  ìˆ˜ ìˆìŒì„ ë³´ì¥í•  ìˆ˜ ì—†ë‹¤.
+		   	(Memberíƒ€ì… ë˜ëŠ” Memberë¥¼ ìƒì†í•œ ê·¸ ì–´ë–¤ íƒ€ì…ì„ ì˜ë¯¸í•˜ë¯€ë¡œ ì•„ì§ êµ¬ì²´ì ì¸ íƒ€ì…ì´
+		   	ì •í•´ì§€ì§€ ì•Šì•˜ë‹¤. => ì»´íŒŒì¼ ì—ëŸ¬ ë°œìƒ)
 		 */
 		
-//		Member m = new Member("È«±æµ¿", 33);
-//		list.add(m); //µî·Ï ºÒ°¡...
+//		Member m = new Member("í™ê¸¸ë™", 33);
+//		list.add(m); //ë“±ë¡ ë¶ˆê°€...
 	}
 	
 	
 	public void registerMemberInfo2(List<? super Member> list) {
 		/*
-		  	super Å°¿öµå¸¦ ÀÌ¿ëÇÑ ÇÏÇÑ Á¦ÇÑ (Lower Bound) ¿¹Á¦
-		  	list´Â MemberÅ¸ÀÔÀÇ °´Ã¼¸¦ Æ÷ÇÔÇÑ´Ù´Â °ÍÀ» º¸Àå ÇÒ ¼ö ÀÖ´Ù.
-		  	=> MemberÅ¸ÀÔ ¶Ç´Â MemberÅ¸ÀÔÀÇ ½´ÆÛÅ¸ÀÔÀ» ´ãÀº ¸®½ºÆ®¸¦ ÀÇ¹ÌÇÏ±â ¶§¹®¿¡....
+		  	super í‚¤ì›Œë“œë¥¼ ì´ìš©í•œ í•˜í•œ ì œí•œ (Lower Bound) ì˜ˆì œ
+		  	listëŠ” Memberíƒ€ì…ì˜ ê°ì²´ë¥¼ í¬í•¨í•œë‹¤ëŠ” ê²ƒì„ ë³´ì¥ í•  ìˆ˜ ìˆë‹¤.
+		  	=> Memberíƒ€ì… ë˜ëŠ” Memberíƒ€ì…ì˜ ìŠˆí¼íƒ€ì…ì„ ë‹´ì€ ë¦¬ìŠ¤íŠ¸ë¥¼ ì˜ë¯¸í•˜ê¸° ë•Œë¬¸ì—....
 		 */
-		Member m = new Member("È«±æµ¿", 33);
+		Member m = new Member("í™ê¸¸ë™", 33);
 		list.add(m);
 	}
 	

@@ -2,11 +2,11 @@ package kr.or.ddit.basic;
 
 class util {
 	/*
-	  	Á¦³Ê¸¯ ¸Ş¼Òµå <T, R> R method(T t)
+	  	ì œë„ˆë¦­ ë©”ì†Œë“œ <T, R> R method(T t)
 	  	
-	  	ÆÄ¶ó¹ÌÅÍ Å¸ÀÔ°ú ¸®ÅÏÅ¸ÀÔÀ¸·Î Å¸ÀÔ ÆÄ¶ó¹ÌÅÍ¸¦ °¡Áö´Â ¸Ş¼Òµå
+	  	íŒŒë¼ë¯¸í„° íƒ€ì…ê³¼ ë¦¬í„´íƒ€ì…ìœ¼ë¡œ íƒ€ì… íŒŒë¼ë¯¸í„°ë¥¼ ê°€ì§€ëŠ” ë©”ì†Œë“œ
 	  	
-	  	¼±¾ğ¹æ¹ı : ¸®ÅÏÅ¸ÀÔ ¾Õ¿¡ <> ±âÈ£¸¦ Ãß°¡ÇÏ°í Å¸ÀÔ ÆÄ¶ó¹ÌÅÍ¸¦ ±â¼ú ÈÄ »ç¿ëÇÔ.
+	  	ì„ ì–¸ë°©ë²• : ë¦¬í„´íƒ€ì… ì•ì— <> ê¸°í˜¸ë¥¼ ì¶”ê°€í•˜ê³  íƒ€ì… íŒŒë¼ë¯¸í„°ë¥¼ ê¸°ìˆ  í›„ ì‚¬ìš©í•¨.
 	 */
 	public static <K, V> boolean compare(Pair<K, V> p1, Pair<K, V> p2) {
 		boolean keyCompare = p1.getKey().equals(p2.getKey());
@@ -18,7 +18,7 @@ class util {
 
 /**
  * 
- *¸ÖÆ¼Å¸ÀÔ <k, v>À» °¡Áö´Â Á¦³Ê¸¯ Å¬·¡½º
+ *ë©€í‹°íƒ€ì… <k, v>ì„ ê°€ì§€ëŠ” ì œë„ˆë¦­ í´ë˜ìŠ¤
  * @author user
  *
  * @param <K>
@@ -59,28 +59,28 @@ class Pair<K, V>{
 
 public class T03GenericMethodTest {
 	public static void main(String[] args) {
-		Pair<Integer, String> p1 = new Pair<Integer, String>(1, "È«±æµ¿");
-		Pair<Integer, String> p2 = new Pair<Integer, String>(1, "È«±æµ¿");
+		Pair<Integer, String> p1 = new Pair<Integer, String>(1, "í™ê¸¸ë™");
+		Pair<Integer, String> p2 = new Pair<Integer, String>(1, "í™ê¸¸ë™");
 		
-		// ±¸Ã¼Àû Å¸ÀÔÀ» ¸í½ÃÀûÀ¸·Î ÁöÁ¤(»ı·«°¡´É)
+		// êµ¬ì²´ì  íƒ€ì…ì„ ëª…ì‹œì ìœ¼ë¡œ ì§€ì •(ìƒëµê°€ëŠ¥)
 		boolean result1 = util.<Integer, String>compare(p1, p2);
 		
 		if(result1) {
-			System.out.println("³í¸®(ÀÇ¹Ì)ÀûÀ¸·Î µ¿ÀÏÇÑ °´Ã¼ÀÓ.");
+			System.out.println("ë…¼ë¦¬(ì˜ë¯¸)ì ìœ¼ë¡œ ë™ì¼í•œ ê°ì²´ì„.");
 		}else {
-			System.out.println("³í¸®(ÀÇ¹Ì)ÀûÀ¸·Î µ¿ÀÏÇÑ °´Ã¼ ¾Æ´Ô.");
+			System.out.println("ë…¼ë¦¬(ì˜ë¯¸)ì ìœ¼ë¡œ ë™ì¼í•œ ê°ì²´ ì•„ë‹˜.");
 		}
-		Pair<String, String> p3 = new Pair<String, String>("001", "È«±æµ¿");
-		Pair<String, String> p4 = new Pair<String, String>("002", "È«±æµ¿");
+		Pair<String, String> p3 = new Pair<String, String>("001", "í™ê¸¸ë™");
+		Pair<String, String> p4 = new Pair<String, String>("002", "í™ê¸¸ë™");
 		
 		boolean result2 = util.compare(p3, p4);
 		
 		if(result2) {
-			System.out.println("³í¸®(ÀÇ¹Ì)ÀûÀ¸·Î µ¿ÀÏÇÑ °´Ã¼ÀÓ.");
+			System.out.println("ë…¼ë¦¬(ì˜ë¯¸)ì ìœ¼ë¡œ ë™ì¼í•œ ê°ì²´ì„.");
 		}else {
-			System.out.println("³í¸®(ÀÇ¹Ì)ÀûÀ¸·Î µ¿ÀÏÇÑ °´Ã¼ ¾Æ´Ô.");
+			System.out.println("ë…¼ë¦¬(ì˜ë¯¸)ì ìœ¼ë¡œ ë™ì¼í•œ ê°ì²´ ì•„ë‹˜.");
 		}
 		
-		p1.<String, Integer>displayAll("Å°", 180);
+		p1.<String, Integer>displayAll("í‚¤", 180);
 	}
 }

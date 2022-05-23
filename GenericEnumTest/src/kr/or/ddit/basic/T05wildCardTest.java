@@ -5,19 +5,19 @@ import java.util.List;
 
 public class T05wildCardTest {
 	/*
-	 	¿ÍÀÏµå Ä«µå¿¡ ´ëÇÏ¿©...
+	 	ì™€ì¼ë“œ ì¹´ë“œì— ëŒ€í•˜ì—¬...
 	 	
-	 	¿ÍÀÏµåÄ«µå(?)´Â Á¦³Ê¸¯ Å¸ÀÔÀ» ÀÌ¿ëÇÑ Å¸ÀÔ ¾ÈÀüÇÑ ÄÚµå¸¦ À§ÇØ »ç¿ëÇÏ´Â Æ¯º°ÇÑ Á¾·ùÀÇ
-	 	ÀÎ¼ö(Argument)·Î¼­, º¯¼ö¼±¾ğ, °´Ã¼»ı¼º ¹× ¸Ş¼Òµå Á¤ÀÇ ÇÒ ¶§ »ç¿ëµÈ´Ù.
+	 	ì™€ì¼ë“œì¹´ë“œ(?)ëŠ” ì œë„ˆë¦­ íƒ€ì…ì„ ì´ìš©í•œ íƒ€ì… ì•ˆì „í•œ ì½”ë“œë¥¼ ìœ„í•´ ì‚¬ìš©í•˜ëŠ” íŠ¹ë³„í•œ ì¢…ë¥˜ì˜
+	 	ì¸ìˆ˜(Argument)ë¡œì„œ, ë³€ìˆ˜ì„ ì–¸, ê°ì²´ìƒì„± ë° ë©”ì†Œë“œ ì •ì˜ í•  ë•Œ ì‚¬ìš©ëœë‹¤.
 	 	
-	 	<? extends T> => ¿ÍÀÏµå Ä«µåÀÇ »óÇÑ Á¦ÇÑ. T¿Í ±× ÀÚ¼Õµé¸¸ °¡´É
-	 	<? Super T>   => ¿ÍÀÏµå Ä«µåÀÇ ÇÏÇÑ Á¦ÇÑ. T¿Í ±× Á¶»óµé¸¸ °¡´É
-	 	<?>           => ¸ğµç Å¸ÀÔÀÌ °¡´É <? extends Object>¿Í µ¿ÀÏ.
+	 	<? extends T> => ì™€ì¼ë“œ ì¹´ë“œì˜ ìƒí•œ ì œí•œ. Tì™€ ê·¸ ìì†ë“¤ë§Œ ê°€ëŠ¥
+	 	<? Super T>   => ì™€ì¼ë“œ ì¹´ë“œì˜ í•˜í•œ ì œí•œ. Tì™€ ê·¸ ì¡°ìƒë“¤ë§Œ ê°€ëŠ¥
+	 	<?>           => ëª¨ë“  íƒ€ì…ì´ ê°€ëŠ¥ <? extends Object>ì™€ ë™ì¼.
 	 */  
 	
 	public static void main(String[] args) {
-		FruitBox<Fruit> fruitBox = new FruitBox<Fruit>(); // °úÀÏ»óÀÚ
-		FruitBox<Apple> appleBox = new FruitBox<Apple>(); // »ç°ı»óÀÚ
+		FruitBox<Fruit> fruitBox = new FruitBox<Fruit>(); // ê³¼ì¼ìƒì
+		FruitBox<Apple> appleBox = new FruitBox<Apple>(); // ì‚¬ê´„ìƒì
 		
 		fruitBox.add(new Apple());
 		fruitBox.add(new Grape());
@@ -44,7 +44,7 @@ class Juicer {
 			}
 			cnt++;
 		}
-		System.out.println(fruitListStr + " => Áê½º ¿Ï¼º!!!");
+		System.out.println(fruitListStr + " => ì¥¬ìŠ¤ ì™„ì„±!!!");
 	}
 }
 
@@ -63,26 +63,26 @@ class Fruit {
 	
 	@Override
 	public String toString() {
-		return "°úÀÏ(" + name + ")";
+		return "ê³¼ì¼(" + name + ")";
 	}
 }
 
 class Apple extends Fruit{
 
 	public Apple() {
-		super("»ç°ú");
+		super("ì‚¬ê³¼");
 	}
 }
 
 class Grape extends Fruit{
 
 	public Grape() {
-		super("Æ÷µµ");
+		super("í¬ë„");
 	}
 }
 
 /**
- * °úÀÏ »óÀÚ
+ * ê³¼ì¼ ìƒì
  * @author user
  *
  * @param <T>

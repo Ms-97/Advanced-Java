@@ -11,7 +11,7 @@ class Util2 {
 }
 
 /**
- * Á¦ÇÑµÈ Å¸ÀÔÆÄ¶ó¹ÌÅÍ(Bounded Parameter) ¿¹Á¦
+ * ì œí•œëœ íƒ€ì…íŒŒë¼ë¯¸í„°(Bounded Parameter) ì˜ˆì œ
  * @author user
  *
  */

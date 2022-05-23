@@ -5,27 +5,27 @@ import java.util.List;
 
 public class T06wildCardTest {
 	
-	// Àå¹Ù±¸´Ï Ç×¸ñÁ¶È¸¸¦ À§ÇÑ ¸Ş¼Òµå(¸ğµç°Í)
+	// ì¥ë°”êµ¬ë‹ˆ í•­ëª©ì¡°íšŒë¥¼ ìœ„í•œ ë©”ì†Œë“œ(ëª¨ë“ ê²ƒ)
 	public static void displayCartItemInfo(Cart<?> cart) {
-		System.out.println("= À½½Ä·ù Àå¹Ù±¸´Ï Ç×¸ñ ¸®½ºÆ® =");
+		System.out.println("= ìŒì‹ë¥˜ ì¥ë°”êµ¬ë‹ˆ í•­ëª© ë¦¬ìŠ¤íŠ¸ =");
 		for(Object obj : cart.getList()) {
 			System.out.println(obj.toString());
 		}
 		System.out.println("----------------");
 	}
 	
-	// Àå¹Ù±¸´Ï Ç×¸ñÁ¶È¸¸¦ À§ÇÑ ¸Ş¼Òµå2(À½·á¿Í ±× ÇÏÀ§)
+	// ì¥ë°”êµ¬ë‹ˆ í•­ëª©ì¡°íšŒë¥¼ ìœ„í•œ ë©”ì†Œë“œ2(ìŒë£Œì™€ ê·¸ í•˜ìœ„)
 	public static void displayCartItemInfo2(Cart<? extends Drink> cart) {
-		System.out.println("= À½·á Àå¹Ù±¸´Ï Ç×¸ñ ¸®½ºÆ® =");
+		System.out.println("= ìŒë£Œ ì¥ë°”êµ¬ë‹ˆ í•­ëª© ë¦¬ìŠ¤íŠ¸ =");
 		for(Object obj : cart.getList()) {
 			System.out.println(obj.toString());
 		}
 		System.out.println("----------------");
 	}
 	
-	// Àå¹Ù±¸´Ï Ç×¸ñÁ¶È¸¸¦ À§ÇÑ ¸Ş¼Òµå3(°í±â·ù³ª ±× »óÀ§)
+	// ì¥ë°”êµ¬ë‹ˆ í•­ëª©ì¡°íšŒë¥¼ ìœ„í•œ ë©”ì†Œë“œ3(ê³ ê¸°ë¥˜ë‚˜ ê·¸ ìƒìœ„)
 	public static void displayCartItemInfo3(Cart<? super Meat> cart) {
-		System.out.println("= °í±â·ù Àå¹Ù±¸´Ï Ç×¸ñ ¸®½ºÆ® =");
+		System.out.println("= ê³ ê¸°ë¥˜ ì¥ë°”êµ¬ë‹ˆ í•­ëª© ë¦¬ìŠ¤íŠ¸ =");
 		for(Object obj : cart.getList()) {
 			System.out.println(obj.toString());
 		}
@@ -37,37 +37,37 @@ public class T06wildCardTest {
 	public static void main(String[] args) {
 		
 		Cart<Food> foodCart = new Cart<>();
-		foodCart.addItem(new Meat("µÅÁö°í±â", 5000));
-		foodCart.addItem(new Meat("¼Ò°í±â", 10000));
-		foodCart.addItem(new Juice("¿À·»ÁöÁê½º", 1500));
-		foodCart.addItem(new Coffee("¾Æ¸Ş¸®Ä«³ë", 2000));
+		foodCart.addItem(new Meat("ë¼ì§€ê³ ê¸°", 5000));
+		foodCart.addItem(new Meat("ì†Œê³ ê¸°", 10000));
+		foodCart.addItem(new Juice("ì˜¤ë Œì§€ì¥¬ìŠ¤", 1500));
+		foodCart.addItem(new Coffee("ì•„ë©”ë¦¬ì¹´ë…¸", 2000));
 		
 		Cart<Meat> meatCart = new Cart<>();
-		meatCart.addItem(new Meat("µÅÁö°í±â", 5000));
-		meatCart.addItem(new Meat("¼Ò°í±â", 10000));
+		meatCart.addItem(new Meat("ë¼ì§€ê³ ê¸°", 5000));
+		meatCart.addItem(new Meat("ì†Œê³ ê¸°", 10000));
 		
 		Cart<Drink> drinkCart = new Cart<Drink>();
-		drinkCart.addItem(new Juice("¿À·»ÁöÁê½º", 1500));
-		drinkCart.addItem(new Coffee("¾Æ¸Ş¸®Ä«³ë", 2000));
+		drinkCart.addItem(new Juice("ì˜¤ë Œì§€ì¥¬ìŠ¤", 1500));
+		drinkCart.addItem(new Coffee("ì•„ë©”ë¦¬ì¹´ë…¸", 2000));
 		
 		displayCartItemInfo(foodCart);
 		displayCartItemInfo(meatCart);
 		displayCartItemInfo(drinkCart);
 		
-		//displayCartItemInfo2(foodCart);  Çã¿ë x
-		//displayCartItemInfo2(meatCart);  Çã¿ë x
+		//displayCartItemInfo2(foodCart);  í—ˆìš© x
+		//displayCartItemInfo2(meatCart);  í—ˆìš© x
 		displayCartItemInfo2(drinkCart);
 		
 		displayCartItemInfo3(foodCart);
 		displayCartItemInfo3(meatCart);
-		//displayCartItemInfo3(drinkCart);  Çã¿ë x
+		//displayCartItemInfo3(drinkCart);  í—ˆìš© x
 	}
 	
 }
 
 class Food{
-	private String name; // À½½ÄÀÌ¸§
-	private int price; // À½½Ä°¡°İ
+	private String name; // ìŒì‹ì´ë¦„
+	private int price; // ìŒì‹ê°€ê²©
 	
 	public Food(String name, int price) {
 		super();
@@ -77,7 +77,7 @@ class Food{
 	
 	@Override
 	public String toString() {
-		return this.name + "(" + this.price + "¿ø)";
+		return this.name + "(" + this.price + "ì›)";
 	}
 }
 

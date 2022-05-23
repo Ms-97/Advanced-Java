@@ -2,7 +2,7 @@ package kr.or.ddit.basic;
 
 public class T08EnumTest {
 /*
-    ¿­°ÅÇü => »ó¼ö°ªµéÀ» ¼±¾ğÇÏ´Â ¹æ¹ı
+    ì—´ê±°í˜• => ìƒìˆ˜ê°’ë“¤ì„ ì„ ì–¸í•˜ëŠ” ë°©ë²•
     
     static final int A = 0;
     static final int B = 1;
@@ -11,30 +11,30 @@ public class T08EnumTest {
     
     enum Data {A, B, C, D};
     
-    ¿­°ÅÇü ¼±¾ğÇÏ´Â ¹æ¹ı
-    enum ¿­°ÅÇü ÀÌ¸§ {»ó¼ö°ª1, »ó¼ö°ª2, ..., »ó¼ö°ªn };
+    ì—´ê±°í˜• ì„ ì–¸í•˜ëŠ” ë°©ë²•
+    enum ì—´ê±°í˜• ì´ë¦„ {ìƒìˆ˜ê°’1, ìƒìˆ˜ê°’2, ..., ìƒìˆ˜ê°’n };
  */
-	// City ¿­°ÅÇü °´Ã¼ ¼±¾ğ (±âº»°ªÀ» ÀÌ¿ëÇÏ´Â ¿­°ÅÇü)
-	public enum City {¼­¿ï, ºÎ»ê, ´ë±¸, ±¤ÁÖ, ´ëÀü};
+	// City ì—´ê±°í˜• ê°ì²´ ì„ ì–¸ (ê¸°ë³¸ê°’ì„ ì´ìš©í•˜ëŠ” ì—´ê±°í˜•)
+	public enum City {ì„œìš¸, ë¶€ì‚°, ëŒ€êµ¬, ê´‘ì£¼, ëŒ€ì „};
 	
-	public enum HomeTown {ºÎ»ê, ±¤ÁÖ, ´ëÀü};
+	public enum HomeTown {ë¶€ì‚°, ê´‘ì£¼, ëŒ€ì „};
 	
-	// µ¥ÀÌÅÍ°ªÀ» ÀÓÀÇ·Î ÁöÁ¤ÇÑ ¿­°ÅÇü °´Ã¼ ¼±¾ğ
-	// µ¥ÀÌÅÍ°ªÀ» Á¤ÇØ ÁÙ °æ¿ì¿¡´Â »ı¼ºÀÚ¸¦ ¸¸µé¾î¼­ °ıÈ£¼ÓÀÇ °ªÀÌ º¯¼ö¿¡ ÀúÀåµÇµµ·Ï
-	// ÇØ¾ß ÇÑ´Ù.
+	// ë°ì´í„°ê°’ì„ ì„ì˜ë¡œ ì§€ì •í•œ ì—´ê±°í˜• ê°ì²´ ì„ ì–¸
+	// ë°ì´í„°ê°’ì„ ì •í•´ ì¤„ ê²½ìš°ì—ëŠ” ìƒì„±ìë¥¼ ë§Œë“¤ì–´ì„œ ê´„í˜¸ì†ì˜ ê°’ì´ ë³€ìˆ˜ì— ì €ì¥ë˜ë„ë¡
+	// í•´ì•¼ í•œë‹¤.
 	public enum Season {
-		º½("3¿ùºÎÅÍ 5¿ù±îÁö"), ¿©¸§("6¿ùºÎÅÍ 8¿ù±îÁö"),
-		°¡À»("9¿ùºÎÅÍ 11¿ù±îÁö"), °Ü¿ï("12¿ùºÎÅÍ 2¿ù±îÁö");
+		ë´„("3ì›”ë¶€í„° 5ì›”ê¹Œì§€"), ì—¬ë¦„("6ì›”ë¶€í„° 8ì›”ê¹Œì§€"),
+		ê°€ì„("9ì›”ë¶€í„° 11ì›”ê¹Œì§€"), ê²¨ìš¸("12ì›”ë¶€í„° 2ì›”ê¹Œì§€");
 		
-		// °ıÈ£¼ÓÀÇ °ªÀÌ ÀúÁ¤µÉ º¯¼ö ¼±¾ğ
+		// ê´„í˜¸ì†ì˜ ê°’ì´ ì €ì •ë  ë³€ìˆ˜ ì„ ì–¸
 		private String str;
 		
-		// »ı¼ºÀÚ ¸¸µé±â(¿­°ÅÇüÀÇ »ı¼ºÀÚ´Â Á¦¾îÀÚ°¡ ¹¬½ÃÀûÀ¸·Î 'private' ÀÌ´Ù.)
+		// ìƒì„±ì ë§Œë“¤ê¸°(ì—´ê±°í˜•ì˜ ìƒì„±ìëŠ” ì œì–´ìê°€ ë¬µì‹œì ìœ¼ë¡œ 'private' ì´ë‹¤.)
 		Season(String data){
 			this.str = data;
 		}
 		
-		//°ªÀ» ¹İÈ¯ÇÏ´Â  ¸Ş¼Òµå ÀÛ¼º
+		//ê°’ì„ ë°˜í™˜í•˜ëŠ”  ë©”ì†Œë“œ ì‘ì„±
 		public String getStr() {
 			return str;
 		}
@@ -42,36 +42,36 @@ public class T08EnumTest {
 
 	public static void main(String[] args) {
 		/*
-		 	¿­°ÅÇü¿¡¼­ »ç¿ëµÇ´Â ¸Ş¼Òµå
+		 	ì—´ê±°í˜•ì—ì„œ ì‚¬ìš©ë˜ëŠ” ë©”ì†Œë“œ
 		 	
-		 	1. name() => ¿­°ÅÇü »ó¼öÀÇ ÀÌ¸§À» ¹®ÀÚ¿­·Î ¹İÈ¯ÇÑ´Ù.
-		 	2. ordinal() => ¿­°ÅÇü »ó¼ö°¡ Á¤ÀÇµÈ ¼ø¼­°ªÀ» ¹İÈ¯ÇÑ´Ù.(0ºÎÅÍ ½ÃÀÛ)
-		 	3. valueOf("¿­°ÅÇü»ó¼öÀÌ¸§") => ÁöÁ¤µÈ ¿­°ÅÇü¿¡¼­ '¿­°ÅÇü»ó¼öÀÌ¸§'°ú
-		 									ÀÏÄ¡ÇÏ´Â ¿­°ÅÇü »ó¼ö¸¦ ¹İÈ¯ÇÑ´Ù.
+		 	1. name() => ì—´ê±°í˜• ìƒìˆ˜ì˜ ì´ë¦„ì„ ë¬¸ìì—´ë¡œ ë°˜í™˜í•œë‹¤.
+		 	2. ordinal() => ì—´ê±°í˜• ìƒìˆ˜ê°€ ì •ì˜ëœ ìˆœì„œê°’ì„ ë°˜í™˜í•œë‹¤.(0ë¶€í„° ì‹œì‘)
+		 	3. valueOf("ì—´ê±°í˜•ìƒìˆ˜ì´ë¦„") => ì§€ì •ëœ ì—´ê±°í˜•ì—ì„œ 'ì—´ê±°í˜•ìƒìˆ˜ì´ë¦„'ê³¼
+		 									ì¼ì¹˜í•˜ëŠ” ì—´ê±°í˜• ìƒìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤.
 		 */
 		
 		City myCity1;
 		City myCity2;
 		
-		// ¿­°ÅÇü °´Ã¼º¯¼ö¿¡ °ª ÀúÀåÇÏ±â
-		myCity1 = City.¼­¿ï;
-		myCity2 = City.valueOf("¼­¿ï");
+		// ì—´ê±°í˜• ê°ì²´ë³€ìˆ˜ì— ê°’ ì €ì¥í•˜ê¸°
+		myCity1 = City.ì„œìš¸;
+		myCity2 = City.valueOf("ì„œìš¸");
 		
 		System.out.println("myCity1 : " + myCity1.name());
-		System.out.println("myCity1ÀÇ ordinal : " + myCity1.ordinal());
+		System.out.println("myCity1ì˜ ordinal : " + myCity1.ordinal());
 		System.out.println();
 		
 		System.out.println("myCity2 : " + myCity2.name());
-		System.out.println("myCity2ÀÇ ordinal : " + myCity2.ordinal());
+		System.out.println("myCity2ì˜ ordinal : " + myCity2.ordinal());
 		System.out.println("=============================================");
 		
-		Season ss = Season.valueOf("¿©¸§");
+		Season ss = Season.valueOf("ì—¬ë¦„");
 		System.out.println("name => " + ss.name());
 		System.out.println("ordinal => " + ss.ordinal());
-		System.out.println("get¸Ş¼Òµå => " + ss.getStr());
+		System.out.println("getë©”ì†Œë“œ => " + ss.getStr());
 		System.out.println("---------------------------------------------");
 		
-		// ¿­°ÅÇüÀÌ¸§.values() => µ¥ÀÌÅÍ¸¦ ¹è¿­·Î °¡Á®¿Â´Ù.
+		// ì—´ê±°í˜•ì´ë¦„.values() => ë°ì´í„°ë¥¼ ë°°ì—´ë¡œ ê°€ì ¸ì˜¨ë‹¤.
 		Season[] enumArr = Season.values();
 		for(Season s : enumArr) {
 			System.out.println(s.name() + " : " + s.getStr());
@@ -82,16 +82,16 @@ public class T08EnumTest {
 			System.out.println(city +  " : " + city.ordinal());
 		}
 		
-		City city = City.´ë±¸;
+		City city = City.ëŒ€êµ¬;
 		
-		System.out.println(city == City.´ëÀü);
-		System.out.println(city == City.´ë±¸);
+		System.out.println(city == City.ëŒ€ì „);
+		System.out.println(city == City.ëŒ€êµ¬);
 		
-		//System.out.println(HomeTown.´ëÀü == City.´ëÀü);
+		//System.out.println(HomeTown.ëŒ€ì „ == City.ëŒ€ì „);
 		
-		System.out.println("´ë±¸ => " + city.compareTo(city.´ë±¸));
-		System.out.println("¼­¿ï => " + city.compareTo(city.¼­¿ï));
-		System.out.println("´ëÀü => " + city.compareTo(city.´ëÀü));
+		System.out.println("ëŒ€êµ¬ => " + city.compareTo(city.ëŒ€êµ¬));
+		System.out.println("ì„œìš¸ => " + city.compareTo(city.ì„œìš¸));
+		System.out.println("ëŒ€ì „ => " + city.compareTo(city.ëŒ€ì „));
 	}
 	
 }

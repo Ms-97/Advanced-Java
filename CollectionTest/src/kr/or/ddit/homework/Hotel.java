@@ -16,96 +16,96 @@ public class Hotel {
 	}
 	
 
-// ¸Ş´º¸¦ Ãâ·ÂÇÏ´Â ¸Ş¼Òµå
+// ë©”ë‰´ë¥¼ ì¶œë ¥í•˜ëŠ” ë©”ì†Œë“œ
 		public void displayMenu() {
 			System.out.println("*******************************************");
-			System.out.println("¾î¶² ¾÷¹«¸¦ ÇÏ½Ã°Ú½À´Ï±î?");
-			System.out.println("1.Ã¼Å©ÀÎ  2.Ã¼Å©¾Æ¿ô 3.°´½Ç»óÅÂ 4.¾÷¹«Á¾·á");
+			System.out.println("ì–´ë–¤ ì—…ë¬´ë¥¼ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
+			System.out.println("1.ì²´í¬ì¸  2.ì²´í¬ì•„ì›ƒ 3.ê°ì‹¤ìƒíƒœ 4.ì—…ë¬´ì¢…ë£Œ");
 			System.out.println("*******************************************");
-			System.out.print("¸Ş´º¼±ÅÃ => ");		
+			System.out.print("ë©”ë‰´ì„ íƒ => ");		
 		}
 		
-// È£ÅÚ ¹®À» ¿©´Â ¸Ş¼Òµå
+// í˜¸í…” ë¬¸ì„ ì—¬ëŠ” ë©”ì†Œë“œ
 		 public void HotelClose() {
 			System.out.println("**************************");
-			System.out.println("È£ÅÚ ¹®À» ´İ¾Ò½À´Ï´Ù.");
+			System.out.println("í˜¸í…” ë¬¸ì„ ë‹«ì•˜ìŠµë‹ˆë‹¤.");
 			System.out.println("**************************\n");
 		 }
 		 
-// È£ÅÚ ¹®À» ¿©´Â ¸Ş¼Òµå
+// í˜¸í…” ë¬¸ì„ ì—¬ëŠ” ë©”ì†Œë“œ
 		 public void HotelOpen() {
 			System.out.println("**************************");
-			System.out.println("È£ÅÚ ¹®À» ¿­¾ú½À´Ï´Ù.");
+			System.out.println("í˜¸í…” ë¬¸ì„ ì—´ì—ˆìŠµë‹ˆë‹¤.");
 			System.out.println("**************************\n");
 			
 			while(true){
 				
-				displayMenu();  // ¸Ş´º Ãâ·Â
+				displayMenu();  // ë©”ë‰´ ì¶œë ¥
 				
-				String menu = sc.nextLine();   // ¸Ş´º ¹øÈ£ ÀÔ·Â
+				String menu = sc.nextLine();   // ë©”ë‰´ ë²ˆí˜¸ ì…ë ¥
 				
 				if(menu.equals("1")) {
-					insert();		         // Ã¼Å©ÀÎ
+					insert();		         // ì²´í¬ì¸
 				}else if(menu.equals("2")) {
-					checkout();		         // Ã¼Å©¾Æ¿ô
+					checkout();		         // ì²´í¬ì•„ì›ƒ
 				}else if(menu.equals("3")) {
-					roomStatus();		     // °´½Ç»óÅÂ
+					roomStatus();		     // ê°ì‹¤ìƒíƒœ
 				}else if(menu.equals("4")) {
 					HotelClose();
 					return;
 				}else {
-					System.out.println("Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù. ´Ù½ÃÀÔ·ÂÇÏ¼¼¿ä.\n");
+					System.out.println("ì˜ëª» ì…ë ¥í–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œì…ë ¥í•˜ì„¸ìš”.\n");
 				}
 				
 			} 
 		}
 			
-// 1.Ã¼Å©ÀÎ ¸Ş¼Òµå		
+// 1.ì²´í¬ì¸ ë©”ì†Œë“œ		
 	private void insert() {
-		System.out.println("\n¾î´À¹æ¿¡ Ã¼Å©ÀÎ ÇÏ½Ã°Ú½À´Ï±î?");
-		System.out.print("¹æ¹øÈ£ ÀÔ·Â =>");
+		System.out.println("\nì–´ëŠë°©ì— ì²´í¬ì¸ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
+		System.out.print("ë°©ë²ˆí˜¸ ì…ë ¥ =>");
 		String room = sc.nextLine();
 		
-		System.out.println("´©±¸¸¦ Ã¼Å©ÀÎ ÇÏ½Ã°Ú½À´Ï±î?");
-		System.out.print("ÀÌ¸§ ÀÔ·Â =>");
+		System.out.println("ëˆ„êµ¬ë¥¼ ì²´í¬ì¸ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
+		System.out.print("ì´ë¦„ ì…ë ¥ =>");
 		String name = sc.nextLine();
 		 	
 		if(HotelMap.get(room) != null) {
-			System.out.println(room + "¹æ¿¡´Â ÀÌ¹Ì »ç¶÷ÀÌ ÀÖ½À´Ï´Ù.\n");
-			return; // ¸Ş¼­µå Á¾·á
+			System.out.println(room + "ë°©ì—ëŠ” ì´ë¯¸ ì‚¬ëŒì´ ìˆìŠµë‹ˆë‹¤.\n");
+			return; // ë©”ì„œë“œ ì¢…ë£Œ
 		}
 		HotelMap.put(room, new HotelList(room, name));
-		System.out.println("Ã¼Å©ÀÎ µÇ¾ú½À´Ï´Ù.");	
+		System.out.println("ì²´í¬ì¸ ë˜ì—ˆìŠµë‹ˆë‹¤.");	
 	}
 	
-// 2.Ã¼Å©¾Æ¿ô ¸Ş¼Òµå	
+// 2.ì²´í¬ì•„ì›ƒ ë©”ì†Œë“œ	
 	private void checkout() {
-		System.out.println("\n¾î´À¹æÀ» Ã¼Å©¾Æ¿ô ÇÏ½Ã°Ú½À´Ï±î?");
-		System.out.print("¹æ¹øÈ£ ÀÔ·Â =>> ");
+		System.out.println("\nì–´ëŠë°©ì„ ì²´í¬ì•„ì›ƒ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
+		System.out.print("ë°©ë²ˆí˜¸ ì…ë ¥ =>> ");
 		String room = sc.nextLine();
 		
-		// remove(key) => »èÁ¦ ¼º°øÇÏ¸é »èÁ¦µÈ value°ª ¹İÈ¯,
-		//                »èÁ¦ ½ÇÆĞ½Ã null ¹İÈ¯ÇÔ.
+		// remove(key) => ì‚­ì œ ì„±ê³µí•˜ë©´ ì‚­ì œëœ valueê°’ ë°˜í™˜,
+		//                ì‚­ì œ ì‹¤íŒ¨ì‹œ null ë°˜í™˜í•¨.
 		if(HotelMap.remove(room) == null) {
-			System.out.println(room + "¹æ¿¡´Â Ã¼Å©ÀÎÇÑ »ç¶÷ÀÌ ¾ø½À´Ï´Ù.\n");
+			System.out.println(room + "ë°©ì—ëŠ” ì²´í¬ì¸í•œ ì‚¬ëŒì´ ì—†ìŠµë‹ˆë‹¤.\n");
 		}else {
-			System.out.println("Ã¼Å©¾Æ¿ô µÇ¾ú½À´Ï´Ù");
+			System.out.println("ì²´í¬ì•„ì›ƒ ë˜ì—ˆìŠµë‹ˆë‹¤");
 		}
 	}	
 			
-// 3.°´½Ç»óÅÂ ¸Ş¼Òµå		
+// 3.ê°ì‹¤ìƒíƒœ ë©”ì†Œë“œ		
 	private void roomStatus() {
 			Set<String> keySet = HotelMap.keySet();
 			
 			if(keySet.size() == 0) {
-				System.out.println("Åõ¼÷ÁßÀÎ Á¤º¸°¡ ¾ø½À´Ï´Ù.\n");
+				System.out.println("íˆ¬ìˆ™ì¤‘ì¸ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.\n");
 			}else {
 				Iterator<String> it = keySet.iterator();
 				while(it.hasNext()) {
 					String room = it.next();
 					HotelList p = HotelMap.get(room);
-					System.out.println("¹æ¹øÈ£ : " + p.getRoom() +
-							           ", Åõ¼÷°´ : " + p.getName());		
+					System.out.println("ë°©ë²ˆí˜¸ : " + p.getRoom() +
+							           ", íˆ¬ìˆ™ê° : " + p.getName());		
 				}
 			}
 		}
