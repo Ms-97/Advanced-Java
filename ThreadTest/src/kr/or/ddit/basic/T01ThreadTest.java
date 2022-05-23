@@ -1,28 +1,28 @@
 package kr.or.ddit.basic;
 /**
- * ¸ÖÆ¼ ½º·¹µå ÇÁ·Î±×·¥
+ * ë©€í‹° ìŠ¤ë ˆë“œ í”„ë¡œê·¸ë¨
  * @author user
  *
  */
-public class T01TreadTest {
+public class T01ThreadTest {
 	public static void main(String[] args) {
-		//¹æ¹ı1: ThreadÅ¬·¡½º¸¦ »ó¼ÓÇÑ classÀÇ ÀÎ½ºÅÏ½º¸¦ »ı¼ºÇÑ ÈÄ
-		//       ÀÌ ÀÎ½ºÅÏ½ºÀÇ start() ¸Ş¼Òµå¸¦ È£ÃâÇÑ´Ù.
+		//ë°©ë²•1: Threadí´ë˜ìŠ¤ë¥¼ ìƒì†í•œ classì˜ ì¸ìŠ¤í„´ìŠ¤ë¥¼ ìƒì„±í•œ í›„
+		//       ì´ ì¸ìŠ¤í„´ìŠ¤ì˜ start() ë©”ì†Œë“œë¥¼ í˜¸ì¶œí•œë‹¤.
 	
 		MyTread1 th1 = new MyTread1();
 		th1.start();
 		
-		// ¹æ¹ı2: Runnable ÀÎÅÍÆäÀÌ½º¸¦ ±¸ÇöÇÑ Å¬·¡½ºÀÇ ÀÎ½ºÅÏ½º¸¦ »ı¼ºÇÑ ÈÄ
-		//        ÀÌ ÀÎ½ºÅÏ½º¸¦ Thread°´Ã¼ÀÇ ÀÎ½ºÅÏ½º¸¦ »ı¼ºÇÒ ¶§ »ı¼ºÀÚÀÇ
-		//        ¸Å°³º¯¼ö·Î ³Ñ°ÜÁØ´Ù. ÀÌ¶§ »ı¼ºµÈ Thread°´Ã¼ÀÇ ÀÎ½ºÅÏ½ºÀÇ 
-		//        start()¸Å¼Òµå¸¦ È£ÃâÇÑ´Ù.
+		// ë°©ë²•2: Runnable ì¸í„°í˜ì´ìŠ¤ë¥¼ êµ¬í˜„í•œ í´ë˜ìŠ¤ì˜ ì¸ìŠ¤í„´ìŠ¤ë¥¼ ìƒì„±í•œ í›„
+		//        ì´ ì¸ìŠ¤í„´ìŠ¤ë¥¼ Threadê°ì²´ì˜ ì¸ìŠ¤í„´ìŠ¤ë¥¼ ìƒì„±í•  ë•Œ ìƒì„±ìì˜
+		//        ë§¤ê°œë³€ìˆ˜ë¡œ ë„˜ê²¨ì¤€ë‹¤. ì´ë•Œ ìƒì„±ëœ Threadê°ì²´ì˜ ì¸ìŠ¤í„´ìŠ¤ì˜ 
+		//        start()ë§¤ì†Œë“œë¥¼ í˜¸ì¶œí•œë‹¤.
 		Runnable r = new MyTread2();
 		Thread th2 = new Thread(r);
 		th2.start();
 		
-		// ¹æ¹ı3 : ÀÍ¸íÅ¬·¡½º¸¦ ÀÌ¿ëÇÏ´Â ¹æ¹ı
-		//         Runnable ÀÎÅÍÆäÀÌ½º¸¦ ±¸ÇöÇÑ ÀÍ¸íÅ¬·¡½º¸¦ ÀÌ¿ëÇÏ¿© 
-		//         ½º·¹µå °´Ã¼¸¦ »ı¼ºÇÑ´Ù.
+		// ë°©ë²•3 : ìµëª…í´ë˜ìŠ¤ë¥¼ ì´ìš©í•˜ëŠ” ë°©ë²•
+		//         Runnable ì¸í„°í˜ì´ìŠ¤ë¥¼ êµ¬í˜„í•œ ìµëª…í´ë˜ìŠ¤ë¥¼ ì´ìš©í•˜ì—¬ 
+		//         ìŠ¤ë ˆë“œ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤.
 		Thread th3 = new Thread(new Runnable() {
 			
 			@Override
@@ -31,8 +31,8 @@ public class T01TreadTest {
 					System.out.print("@");
 					
 					try {
-						// Tread.sleep(½Ã°£) => ÁÖ¾îÁø ½Ã°£µ¿¾È ÀÛ¾÷À» Àá½Ã ¸ØÃá´Ù.
-						// ½Ã°£Àº ¹Ğ¸®¼¼ÄÁµå ´ÜÀ§¸¦ »ç¿ëÇÑ´Ù. (1ÃÊ = 1ms)
+						// Tread.sleep(ì‹œê°„) => ì£¼ì–´ì§„ ì‹œê°„ë™ì•ˆ ì‘ì—…ì„ ì ì‹œ ë©ˆì¶˜ë‹¤.
+						// ì‹œê°„ì€ ë°€ë¦¬ì„¸ì»¨ë“œ ë‹¨ìœ„ë¥¼ ì‚¬ìš©í•œë‹¤. (1ì´ˆ = 1ms)
 						Thread.sleep(100);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
@@ -54,8 +54,8 @@ class MyTread1 extends Thread {
 			System.out.print("*");
 			
 			try {
-				// Tread.sleep(½Ã°£) => ÁÖ¾îÁø ½Ã°£µ¿¾È ÀÛ¾÷À» Àá½Ã ¸ØÃá´Ù.
-				// ½Ã°£Àº ¹Ğ¸®¼¼ÄÁµå ´ÜÀ§¸¦ »ç¿ëÇÑ´Ù. (1ÃÊ = 1ms)
+				// Tread.sleep(ì‹œê°„) => ì£¼ì–´ì§„ ì‹œê°„ë™ì•ˆ ì‘ì—…ì„ ì ì‹œ ë©ˆì¶˜ë‹¤.
+				// ì‹œê°„ì€ ë°€ë¦¬ì„¸ì»¨ë“œ ë‹¨ìœ„ë¥¼ ì‚¬ìš©í•œë‹¤. (1ì´ˆ = 1ms)
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -73,8 +73,8 @@ class MyTread2 implements Runnable {
 				System.out.print("$");
 				
 				try {
-					// Tread.sleep(½Ã°£) => ÁÖ¾îÁø ½Ã°£µ¿¾È ÀÛ¾÷À» Àá½Ã ¸ØÃá´Ù.
-					// ½Ã°£Àº ¹Ğ¸®¼¼ÄÁµå ´ÜÀ§¸¦ »ç¿ëÇÑ´Ù. (1ÃÊ = 1ms)
+					// Tread.sleep(ì‹œê°„) => ì£¼ì–´ì§„ ì‹œê°„ë™ì•ˆ ì‘ì—…ì„ ì ì‹œ ë©ˆì¶˜ë‹¤.
+					// ì‹œê°„ì€ ë°€ë¦¬ì„¸ì»¨ë“œ ë‹¨ìœ„ë¥¼ ì‚¬ìš©í•œë‹¤. (1ì´ˆ = 1ms)
 					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
@@ -84,4 +84,3 @@ class MyTread2 implements Runnable {
 	}
 	
 }
-

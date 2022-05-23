@@ -3,13 +3,13 @@ package kr.or.ddit.basic;
 import javax.swing.JOptionPane;
 
 /**
- * ´ÜÀÏ ½º·¹µå¿¡¼­ÀÇ »ç¿ëÀÚ ÀÔ·Â Ã³¸®ÇÏ±â
+ * ë‹¨ì¼ ìŠ¤ë ˆë“œì—ì„œì˜ ì‚¬ìš©ìž ìž…ë ¥ ì²˜ë¦¬í•˜ê¸°
  */
 public class T05ThreadTest {
 	public static void main(String[] args) {
 		String str = 
-			JOptionPane.showInputDialog("¾Æ¹«°Å³ª ÀÔ·ÂÇÏ¼¼¿ä.");
-		System.out.println("ÀÔ·ÂÇÑ °ªÀº : " + str + "ÀÔ´Ï´Ù.");
+			JOptionPane.showInputDialog("ì•„ë¬´ê±°ë‚˜ ìž…ë ¥í•˜ì„¸ìš”.");
+		System.out.println("ìž…ë ¥í•œ ê°’ì€ : " + str + "ìž…ë‹ˆë‹¤.");
 		
 		for(int i=10; i>=1; i--) {
 			System.out.println(i);

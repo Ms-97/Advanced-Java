@@ -3,8 +3,8 @@ package kr.or.ddit.basic;
 import javax.swing.JOptionPane;
 
 public class T06ThreadTest {
-	// ÀÔ·Â ¿©ºÎ¸¦ È®ÀÎÇÏ±â À§ÇÑ º¯¼ö ¼±¾ð
-	// ¸ðµç ½º·¹µå¿¡¼­ °øÅëÀ¸·Î »ç¿ëÇÒ º¯¼ö
+	// ìž…ë ¥ ì—¬ë¶€ë¥¼ í™•ì¸í•˜ê¸° ìœ„í•œ ë³€ìˆ˜ ì„ ì–¸
+	// ëª¨ë“  ìŠ¤ë ˆë“œì—ì„œ ê³µí†µìœ¼ë¡œ ì‚¬ìš©í•  ë³€ìˆ˜
 	static boolean inputCheck = false;
 
 	public static void main(String[] args) {
@@ -16,28 +16,28 @@ public class T06ThreadTest {
 	}
 	
 }
-// »ç¿ëÀÚ ÀÔ·ÂÀ» Ã³¸®ÇÏ´Â ½º·¹µå Å¬·¡½º
+// ì‚¬ìš©ìž ìž…ë ¥ì„ ì²˜ë¦¬í•˜ëŠ” ìŠ¤ë ˆë“œ í´ëž˜ìŠ¤
 class DataInput extends Thread{
 	@Override
 	public void run() {
 		String str = 
-			JOptionPane.showInputDialog("¾Æ¹«°Å³ª ÀÔ·ÂÇÏ¼¼¿ä.");
+			JOptionPane.showInputDialog("ì•„ë¬´ê±°ë‚˜ ìž…ë ¥í•˜ì„¸ìš”.");
 		
-		// ÀÔ·ÂÀÌ ¿Ï·áµÇ¸é inputCheak º¯¼ö¸¦ true·Î º¯°æÇÑ´Ù.
+		// ìž…ë ¥ì´ ì™„ë£Œë˜ë©´ inputCheak ë³€ìˆ˜ë¥¼ trueë¡œ ë³€ê²½í•œë‹¤.
 		T06ThreadTest.inputCheck = true;
 		
-			System.out.println("ÀÔ·ÂÇÑ °ªÀº : " + str + "ÀÔ´Ï´Ù.");
+			System.out.println("ìž…ë ¥í•œ ê°’ì€ : " + str + "ìž…ë‹ˆë‹¤.");
 	}
 }
-// Ä«¿îÆ®´Ù¿îÀ» Ã³¸®ÇÏ´Â ½º·¹µå Å¬·¡½º
+// ì¹´ìš´íŠ¸ë‹¤ìš´ì„ ì²˜ë¦¬í•˜ëŠ” ìŠ¤ë ˆë“œ í´ëž˜ìŠ¤
 class CountDown extends Thread{
 	@Override
 	public void run() {
 		for(int i=10; i>=1; i--) {
-			// ÀÔ·ÂÀÌ ¿Ï·áµÇ¾ú´ÂÁö ¿©ºÎ¸¦ °Ë»çÇÏ°í ÀÔ·ÂÀÌ ¿Ï·áµÇ¸é
-			// run() ¸¦ Á¾·á½ÃÅ²´Ù. Áï ÇöÀç ½º·¹µå¸¦ Á¾·á½ÃÅ²´Ù.
+			// ìž…ë ¥ì´ ì™„ë£Œë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ê²€ì‚¬í•˜ê³  ìž…ë ¥ì´ ì™„ë£Œë˜ë©´
+			// run() ë¥¼ ì¢…ë£Œì‹œí‚¨ë‹¤. ì¦‰ í˜„ìž¬ ìŠ¤ë ˆë“œë¥¼ ì¢…ë£Œì‹œí‚¨ë‹¤.
 			if(T06ThreadTest.inputCheck) {
-				return; // run()¸Þ¼Òµå°¡ Á¾·áµÇ¸é ½º·¹µåµµ Á¾·áµÈ´Ù.
+				return; // run()ë©”ì†Œë“œê°€ ì¢…ë£Œë˜ë©´ ìŠ¤ë ˆë“œë„ ì¢…ë£Œëœë‹¤.
 			}
 			
 			System.out.println(i);

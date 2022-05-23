@@ -2,73 +2,68 @@ package kr.or.ddit.basic;
 import javax.swing.JOptionPane;
 
 /*
-	ÄÄÇ»ÅÍ¿Í °¡À§ ¹ÙÀ§ º¸¸¦ ÁøÇàÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
-
-	ÄÄÇ»ÅÍÀÇ °¡À§ ¹ÙÀ§ º¸´Â ³­¼ö¸¦ ÀÌ¿ëÇÏ¿© ±¸ÇÏ°í
-	»ç¿ëÀÚÀÇ °¡À§ ¹ÙÀ§ º¸´Â showInputDialog()¸Ş¼­µå¸¦ ÀÌ¿ëÇÏ¿© ÀÔ·Â¹Ş´Â´Ù.
-
-	ÀÔ·Â½Ã°£Àº 5ÃÊ·Î Á¦ÇÑÇÏ°í Ä«¿îÆ® ´Ù¿îÀ» ÁøÇàÇÑ´Ù.
-	5ÃÊ¾È¿¡ ÀÔ·ÂÀÌ ¾øÀ¸¸é °ÔÀÓÀ» Áø°ÍÀ¸·Î Ã³¸®ÇÑ´Ù.
-
-	5ÃÊ¾È¿¡ ÀÔ·ÂÀÌ ¿Ï·áµÇ¸é ½ÂÆĞ¸¦ Ãâ·ÂÇÑ´Ù.
-
-	°á°ú¿¹½Ã)
-		=== °á °ú ===
-		ÄÄÇ»ÅÍ : °¡À§
-		´ç  ½Å : ¹ÙÀ§
-		°á  °ú : ´ç½ÅÀÌ ÀÌ°å½À´Ï´Ù.
-
+	ì»´í“¨í„°ì™€ ê°€ìœ„ ë°”ìœ„ ë³´ë¥¼ ì§„í–‰í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì‹œì˜¤.
+	ì»´í“¨í„°ì˜ ê°€ìœ„ ë°”ìœ„ ë³´ëŠ” ë‚œìˆ˜ë¥¼ ì´ìš©í•˜ì—¬ êµ¬í•˜ê³ 
+	ì‚¬ìš©ìì˜ ê°€ìœ„ ë°”ìœ„ ë³´ëŠ” showInputDialog()ë©”ì„œë“œë¥¼ ì´ìš©í•˜ì—¬ ì…ë ¥ë°›ëŠ”ë‹¤.
+	ì…ë ¥ì‹œê°„ì€ 5ì´ˆë¡œ ì œí•œí•˜ê³  ì¹´ìš´íŠ¸ ë‹¤ìš´ì„ ì§„í–‰í•œë‹¤.
+	5ì´ˆì•ˆì— ì…ë ¥ì´ ì—†ìœ¼ë©´ ê²Œì„ì„ ì§„ê²ƒìœ¼ë¡œ ì²˜ë¦¬í•œë‹¤.
+	5ì´ˆì•ˆì— ì…ë ¥ì´ ì™„ë£Œë˜ë©´ ìŠ¹íŒ¨ë¥¼ ì¶œë ¥í•œë‹¤.
+	ê²°ê³¼ì˜ˆì‹œ)
+		=== ê²° ê³¼ ===
+		ì»´í“¨í„° : ê°€ìœ„
+		ë‹¹  ì‹  : ë°”ìœ„
+		ê²°  ê³¼ : ë‹¹ì‹ ì´ ì´ê²¼ìŠµë‹ˆë‹¤.
 */
 public class T07ThreadGame {
 	public static boolean inputCheck = false;
-	public static String man = ""; // »ç¿ëÀÚÀÇ °¡À§¹ÙÀ§º¸°¡ ÀúÀåµÉ º¯¼ö
+	public static String man = ""; // ì‚¬ìš©ìì˜ ê°€ìœ„ë°”ìœ„ë³´ê°€ ì €ì¥ë  ë³€ìˆ˜
 	
 
 	public static void main(String[] args) {
 		
-		// ³­¼ö¸¦ ÀÌ¿ëÇÏ¿© ÄÄÇ»ÅÍÀÇ °¡À§ ¹ÙÀ§ º¸¸¦ Á¤ÇÑ´Ù.
-		String[] data = {"°¡À§", "¹ÙÀ§", "º¸"};
-		int index = (int)(Math.random()*3); // 0~2»çÀÌÀÇ ³­¼ö ¸¸µé±â
+		// ë‚œìˆ˜ë¥¼ ì´ìš©í•˜ì—¬ ì»´í“¨í„°ì˜ ê°€ìœ„ ë°”ìœ„ ë³´ë¥¼ ì •í•œë‹¤.
+		String[] data = {"ê°€ìœ„", "ë°”ìœ„", "ë³´"};
+		int index = (int)(Math.random()*3); // 0~2ì‚¬ì´ì˜ ë‚œìˆ˜ ë§Œë“¤ê¸°
 		String com = data[index];
 
-		// Ä«¿îÆ® ´Ù¿î ¾²·¹µå ½ÇÇà
+		// ì¹´ìš´íŠ¸ ë‹¤ìš´ ì“°ë ˆë“œ ì‹¤í–‰
 		GameTimer gt = new GameTimer();
 		gt.start();
 
-		// »ç¿ëÀÚ·Î ºÎÅÍ °¡À§, ¹ÙÀ§, º¸ ÀÔ·Â ¹Ş±â
+		// ì‚¬ìš©ìë¡œ ë¶€í„° ê°€ìœ„, ë°”ìœ„, ë³´ ì…ë ¥ ë°›ê¸°
 		UserInput input = new UserInput();
 		input.start();
 		
 		try {
-			input.join(); // ÀÔ·ÂÀÌ ³¡³¯¶§±îÁö ±â´Ù¸°´Ù.
+			input.join(); // ì…ë ¥ì´ ëë‚ ë•Œê¹Œì§€ ê¸°ë‹¤ë¦°ë‹¤.
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
 		
-		// °á°ú ÆÇÁ¤ÇÏ±â
+		// ê²°ê³¼ íŒì •í•˜ê¸°
 		String result = "";
 		if( man.equals(com) ){
-			result = "ºñ°å½À´Ï´Ù.";
-		}else if( (man.equals("°¡À§") && com.equals("º¸"))
-				 || (man.equals("¹ÙÀ§") && com.equals("°¡À§"))
-				 || (man.equals("º¸") && com.equals("¹ÙÀ§")) ){
-			result = "´ç½ÅÀÌ ÀÌ°å½À´Ï´Ù.";
+			result = "ë¹„ê²¼ìŠµë‹ˆë‹¤.";
+		}else if( (man.equals("ê°€ìœ„") && com.equals("ë³´"))
+				 || (man.equals("ë°”ìœ„") && com.equals("ê°€ìœ„"))
+				 || (man.equals("ë³´") && com.equals("ë°”ìœ„")) ){
+			result = "ë‹¹ì‹ ì´ ì´ê²¼ìŠµë‹ˆë‹¤.";
 		}else{
-			result = "´ç½ÅÀÌ Á³½À´Ï´Ù.";
+			result = "ë‹¹ì‹ ì´ ì¡ŒìŠµë‹ˆë‹¤.";
 		}
 
-		// °á°ú Ãâ·Â
-		System.out.println("=== °á °ú ===");
-		System.out.println("ÄÄÇ»ÅÍ : " + com);
-		System.out.println("´ç  ½Å : " + man);
-		System.out.println("°á  °ú : " + result);
+		// ê²°ê³¼ ì¶œë ¥
+		System.out.println("=== ê²° ê³¼ ===");
+		System.out.println("ì»´í“¨í„° : " + com);
+		System.out.println("ë‹¹  ì‹  : " + man);
+		System.out.println("ê²°  ê³¼ : " + result);
 	}
 
 }
 
 /**
- * °ÔÀÓ Å¸ÀÌ¸Ó
+ * ê²Œì„ íƒ€ì´ë¨¸
  */
 class GameTimer extends Thread{
 	@Override
@@ -84,14 +79,14 @@ class GameTimer extends Thread{
 				e.printStackTrace();
 			}
 		}
-		System.out.println("½Ã°£ÀÌ ÃÊ°úµÇ¾î ´ç½ÅÀÌ Á³½À´Ï´Ù.");
+		System.out.println("ì‹œê°„ì´ ì´ˆê³¼ë˜ì–´ ë‹¹ì‹ ì´ ì¡ŒìŠµë‹ˆë‹¤.");
 		System.exit(0);
 
 	}
 }
 
 /**
- * »ç¿ëÀÚ ÀÔ·Â Ã³¸®¸¦ À§ÇÑ ½º·¹µå
+ * ì‚¬ìš©ì ì…ë ¥ ì²˜ë¦¬ë¥¼ ìœ„í•œ ìŠ¤ë ˆë“œ
  */
 class UserInput extends Thread {
 	@Override
@@ -100,17 +95,10 @@ class UserInput extends Thread {
 		String inputData = "";
 		
 		do{
-			inputData = JOptionPane.showInputDialog("°¡À§, ¹ÙÀ§, º¸¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
-		}while(!inputData.equals("°¡À§") && !inputData.equals("¹ÙÀ§") && !inputData.equals("º¸"));
+			inputData = JOptionPane.showInputDialog("ê°€ìœ„, ë°”ìœ„, ë³´ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+		}while(!inputData.equals("ê°€ìœ„") && !inputData.equals("ë°”ìœ„") && !inputData.equals("ë³´"));
 
-		T07ThreadGame.inputCheck = true;  // ÀÔ·ÂÀÌ ¿Ï·áµÊÀ» ¾Ë·ÁÁÖ´Â º¯¼ö°ªÀ» º¯°æÇÑ´Ù.
-		T07ThreadGame.man = inputData;	   //  ÀÔ·Â°ª ¼³Á¤
+		T07ThreadGame.inputCheck = true;  // ì…ë ¥ì´ ì™„ë£Œë¨ì„ ì•Œë ¤ì£¼ëŠ” ë³€ìˆ˜ê°’ì„ ë³€ê²½í•œë‹¤.
+		T07ThreadGame.man = inputData;	   //  ì…ë ¥ê°’ ì„¤ì •
 	}
 }
-
-
-
-
-
-
-

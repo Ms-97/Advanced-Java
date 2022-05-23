@@ -2,12 +2,12 @@ package kr.or.ddit.basic;
 
 public class T04ThreadTest {
 /*
- 	1~20¾ï ±îÁöÀÇ ÇÕ°è¸¦ ±¸ÇÏ´Âµ¥ °É¸° ½Ã°£ Ã¼Å©ÇØ º¸±â
- 	ÀüÃ¼ ÇÕ°è¸¦ ±¸ÇÏ´Â ÀÛ¾÷À» ´Üµ¶À¸·Î ÇßÀ» ¶§(1°³ÀÇ ½º·¹µå¸¦ ÀÌ¿ë)¿Í
- 	¿©·¯ ½º·¹µå·Î ºĞÇÒÇØ¼­ ÀÛ¾÷ÇÒ ¶§ÀÇ ½Ã°£À» È®ÀÎÇØ º¸±â.
+ 	1~20ì–µ ê¹Œì§€ì˜ í•©ê³„ë¥¼ êµ¬í•˜ëŠ”ë° ê±¸ë¦° ì‹œê°„ ì²´í¬í•´ ë³´ê¸°
+ 	ì „ì²´ í•©ê³„ë¥¼ êµ¬í•˜ëŠ” ì‘ì—…ì„ ë‹¨ë…ìœ¼ë¡œ í–ˆì„ ë•Œ(1ê°œì˜ ìŠ¤ë ˆë“œë¥¼ ì´ìš©)ì™€
+ 	ì—¬ëŸ¬ ìŠ¤ë ˆë“œë¡œ ë¶„í• í•´ì„œ ì‘ì—…í•  ë•Œì˜ ì‹œê°„ì„ í™•ì¸í•´ ë³´ê¸°.
  */
 	public static void main(String[] args) {
-		// ´Üµ¶À¸·Î Ã³¸®ÇÒ ¶§...
+		// ë‹¨ë…ìœ¼ë¡œ ì²˜ë¦¬í•  ë•Œ...
 		SumThread sm = new SumThread(1L, 2000000000L);
 		long startTime = System.currentTimeMillis();
 		
@@ -20,12 +20,12 @@ public class T04ThreadTest {
 		}
 		long endTime = System.currentTimeMillis();
 		
-		System.out.println("´Üµ¶À¸·Î Ã³¸®ÇÒ ¶§ÀÇ Ã³¸®½Ã°£ : "
+		System.out.println("ë‹¨ë…ìœ¼ë¡œ ì²˜ë¦¬í•  ë•Œì˜ ì²˜ë¦¬ì‹œê°„ : "
 							+(endTime - startTime)+ "(ms)");
 		System.out.println();
 		System.out.println();
 		
-		// ¿©·¯ ½º·¹µå°¡ Çù·ÂÇØ¼­ Ã³¸® ÇÒ¶§..
+		// ì—¬ëŸ¬ ìŠ¤ë ˆë“œê°€ í˜‘ë ¥í•´ì„œ ì²˜ë¦¬ í• ë•Œ..
 		SumThread[] sumThs = new SumThread[] {
 			new SumThread(1L,           500000000L),	
 			new SumThread(500000001L,  1000000000L),	
@@ -49,7 +49,7 @@ public class T04ThreadTest {
 		
 		endTime = System.currentTimeMillis();
 		
-		System.out.println("Çù·Â Ã³¸®(4°³ÀÇ ½º·¹µå)ÇÒ ¶§ÀÇ Ã³¸®½Ã°£ : "
+		System.out.println("í˜‘ë ¥ ì²˜ë¦¬(4ê°œì˜ ìŠ¤ë ˆë“œ)í•  ë•Œì˜ ì²˜ë¦¬ì‹œê°„ : "
 				+ (endTime - startTime) + "(ms)");
 		
 	}
@@ -69,6 +69,6 @@ class SumThread extends Thread {
 			for(long i=min; i<=max; i++) {
 				sum += i;
 			}
-			System.out.println(min + " ~ " + max + "±îÁöÀÇ ÇÕ : " +sum);
+			System.out.println(min + " ~ " + max + "ê¹Œì§€ì˜ í•© : " +sum);
 		}
 }

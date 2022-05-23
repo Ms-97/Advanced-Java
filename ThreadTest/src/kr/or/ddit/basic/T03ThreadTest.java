@@ -4,27 +4,27 @@ public class T03ThreadTest {
 	public static void main(String[] args) {
 		Thread th = new Thread(new MyRunner());
 		
-		// UTC(Universal Time Coodinated ÇùÁ¤ ¼¼°è Ç¥ÁØ½Ã)¸¦ »ç¿ëÇÏ¿©
-		// 1970³â 1¿ì·¯ 1ÀÏ 0½Ã 0ºĞ 0ÃÊ¸¦ ±âÁØÀ¸·Î °æ°úÇÑ ½Ã°£À» ¹Ğ¸®¼¼ÄÁµå
-		// ´ÜÀ§·Î ³ªÅ¸³½´Ù.
+		// UTC(Universal Time Coodinated í˜‘ì • ì„¸ê³„ í‘œì¤€ì‹œ)ë¥¼ ì‚¬ìš©í•˜ì—¬
+		// 1970ë…„ 1ìš°ëŸ¬ 1ì¼ 0ì‹œ 0ë¶„ 0ì´ˆë¥¼ ê¸°ì¤€ìœ¼ë¡œ ê²½ê³¼í•œ ì‹œê°„ì„ ë°€ë¦¬ì„¸ì»¨ë“œ
+		// ë‹¨ìœ„ë¡œ ë‚˜íƒ€ë‚¸ë‹¤.
 		long startTime = System.currentTimeMillis();
 		System.out.println("startTime :" + startTime);
-		th.start(); // ½º·¹µå ½ÃÀÛ
+		th.start(); // ìŠ¤ë ˆë“œ ì‹œì‘
 		
 		try {
-			th.join();  // ÇöÀç ½ÇÇàÁßÀÎ ½º·¹µå¿¡¼­ ÀÛ¾÷ÁßÀÎ ½º·¹µå
-			            // (Áö±İÀº th½º·¹µå)°¡ Á¾·áµÉ ¶§±îÁö ±â´Ù¸°´Ù.
+			th.join();  // í˜„ì¬ ì‹¤í–‰ì¤‘ì¸ ìŠ¤ë ˆë“œì—ì„œ ì‘ì—…ì¤‘ì¸ ìŠ¤ë ˆë“œ
+			            // (ì§€ê¸ˆì€ thìŠ¤ë ˆë“œ)ê°€ ì¢…ë£Œë  ë•Œê¹Œì§€ ê¸°ë‹¤ë¦°ë‹¤.
 		}catch(InterruptedException ex) {
 			ex.printStackTrace();
 		}
 		
 		long endTime = System.currentTimeMillis();
 		System.out.println("endTime :" + startTime);
-		System.out.println("°æ°ú ½Ã°£ : "+(endTime - startTime));
+		System.out.println("ê²½ê³¼ ì‹œê°„ : "+(endTime - startTime));
 	}
 }
 
-//1~1000000000 ±îÁöÀÇ ÇÕ°è¸¦ ±¸ÇÏ´Â ½º·¹µå Å¬·¡½º
+//1~1000000000 ê¹Œì§€ì˜ í•©ê³„ë¥¼ êµ¬í•˜ëŠ” ìŠ¤ë ˆë“œ í´ë˜ìŠ¤
 class MyRunner implements Runnable {
 
 	@Override
@@ -33,7 +33,7 @@ class MyRunner implements Runnable {
 		for(int i=1; i<=1000000000; i++) {
 			sum += i;
 		}
-		System.out.println("ÇÕ°è : " + sum);
+		System.out.println("í•©ê³„ : " + sum);
 	}
 	
 }

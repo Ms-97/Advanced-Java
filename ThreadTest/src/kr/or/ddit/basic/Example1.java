@@ -14,10 +14,10 @@ public class Example1 {
 		th1.start();
 		th2.start();
 		
-		System.out.println("== °á °ú ==");
-		System.out.println("ÄÄÇ»ÅÍ : ");
-		System.out.println("´ç½Å : ");
-		System.out.println("°á°ú : ");
+		System.out.println("== ê²° ê³¼ ==");
+		System.out.println("ì»´í“¨í„° : ");
+		System.out.println("ë‹¹ì‹  : ");
+		System.out.println("ê²°ê³¼ : ");
 		
 		}
 	}
@@ -25,32 +25,32 @@ public class Example1 {
 class Start extends Thread{	
 public void showInputDialog(){
 	Random random = new Random();
-	String[] com = {"°¡À§","¹ÙÀ§","º¸"};
+	String[] com = {"ê°€ìœ„","ë°”ìœ„","ë³´"};
 	int ran = random.nextInt(3);
 	String result ="";
 	String you = 
-			JOptionPane.showInputDialog("°¡À§ ¹ÙÀ§ º¸¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+			JOptionPane.showInputDialog("ê°€ìœ„ ë°”ìœ„ ë³´ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
 	
-		// ÀÔ·ÂÀÌ ¿Ï·áµÇ¸é inputCheak º¯¼ö¸¦ true·Î º¯°æÇÑ´Ù.
+		// ìž…ë ¥ì´ ì™„ë£Œë˜ë©´ inputCheak ë³€ìˆ˜ë¥¼ trueë¡œ ë³€ê²½í•œë‹¤.
 		Example1.inputCheck = true;
 		if (you.equals(com[ran])) {
-			result = "ºñ°å½À´Ï´Ù.";
-			}else if (you.equals("°¡À§") && com[ran].equals("¹ÙÀ§") ||
-			you.equals("¹ÙÀ§") && com[ran].equals("º¸") ||
-			you.equals("º¸") && com[ran].equals("°¡À§")) {
-			result = "ÄÄÇ»ÅÍ°¡ ÀÌ°å½À´Ï´Ù.";
+			result = "ë¹„ê²¼ìŠµë‹ˆë‹¤.";
+			}else if (you.equals("ê°€ìœ„") && com[ran].equals("ë°”ìœ„") ||
+			you.equals("ë°”ìœ„") && com[ran].equals("ë³´") ||
+			you.equals("ë³´") && com[ran].equals("ê°€ìœ„")) {
+			result = "ì»´í“¨í„°ê°€ ì´ê²¼ìŠµë‹ˆë‹¤.";
 			} else {
-			result = "´ç½ÅÀÌ ÀÌ°å½À´Ï´Ù.";
+			result = "ë‹¹ì‹ ì´ ì´ê²¼ìŠµë‹ˆë‹¤.";
 			}		
 }
 class CountDown extends Thread{
 	@Override
 	public void run() {
 		for(int i=5; i>=1; i--) {
-			// ÀÔ·ÂÀÌ ¿Ï·áµÇ¾ú´ÂÁö ¿©ºÎ¸¦ °Ë»çÇÏ°í ÀÔ·ÂÀÌ ¿Ï·áµÇ¸é
-			// run() ¸¦ Á¾·á½ÃÅ²´Ù. Áï ÇöÀç ½º·¹µå¸¦ Á¾·á½ÃÅ²´Ù.
+			// ìž…ë ¥ì´ ì™„ë£Œë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ê²€ì‚¬í•˜ê³  ìž…ë ¥ì´ ì™„ë£Œë˜ë©´
+			// run() ë¥¼ ì¢…ë£Œì‹œí‚¨ë‹¤. ì¦‰ í˜„ìž¬ ìŠ¤ë ˆë“œë¥¼ ì¢…ë£Œì‹œí‚¨ë‹¤.
 			if(T06ThreadTest.inputCheck) {
-				return; // run()¸Þ¼Òµå°¡ Á¾·áµÇ¸é ½º·¹µåµµ Á¾·áµÈ´Ù.
+				return; // run()ë©”ì†Œë“œê°€ ì¢…ë£Œë˜ë©´ ìŠ¤ë ˆë“œë„ ì¢…ë£Œëœë‹¤.
 			}
 			
 			System.out.println(i);
