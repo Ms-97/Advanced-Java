@@ -7,11 +7,11 @@ import java.util.TreeSet;
 
 public class Lotto {
 	/*
-	 * ·Î¶Ç¸¦ ±¸¸ÅÇÏ´Â ÇÁ·Î±×·¥ ÀÛ¼ºÇÏ±â
+	 * ë¡œë˜ë¥¼ êµ¬ë§¤í•˜ëŠ” í”„ë¡œê·¸ë¨ ì‘ì„±í•˜ê¸°
 	 * 
-	 * »ç¿ëÀÚ´Â ·Î¶Ç¸¦ ±¸¸ÅÇÒ ¶§ ±¸¸ÅÇÒ ±İ¾×À» ÀÔ·ÂÇÏ°í ÀÔ·ÂÇÑ ±İ¾×¿¡ ¸Â°Ô ·Î¶Ç¹øÈ£¸¦ Ãâ·ÂÇÑ´Ù. 
-	 * (´Ü, ·Î¶Ç ÇÑÀåÀÇ ±İ¾×Àº 1000¿øÀÌ°í
-	 * °Å½º¸§µ·µµ °è»êÇÏ¿© Ãâ·ÂÇÑ´Ù.)
+	 * ì‚¬ìš©ìëŠ” ë¡œë˜ë¥¼ êµ¬ë§¤í•  ë•Œ êµ¬ë§¤í•  ê¸ˆì•¡ì„ ì…ë ¥í•˜ê³  ì…ë ¥í•œ ê¸ˆì•¡ì— ë§ê²Œ ë¡œë˜ë²ˆí˜¸ë¥¼ ì¶œë ¥í•œë‹¤. 
+	 * (ë‹¨, ë¡œë˜ í•œì¥ì˜ ê¸ˆì•¡ì€ 1000ì›ì´ê³ 
+	 * ê±°ìŠ¤ë¦„ëˆë„ ê³„ì‚°í•˜ì—¬ ì¶œë ¥í•œë‹¤.)
 	 */
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -20,25 +20,25 @@ public class Lotto {
 
 		while (run) {
 			System.out.println("==========================");
-			System.out.println("Lotto ÇÁ·Î±×·¥");
+			System.out.println("Lotto í”„ë¡œê·¸ë¨");
 			System.out.println("--------------------------");
-			System.out.println("1. Lotto ±¸ÀÔ");
-			System.out.println(" 2. ÇÁ·Î±×·¥ Á¾·á");
+			System.out.println("1. Lotto êµ¬ì…");
+			System.out.println(" 2. í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 			System.out.println("==========================");
-			System.out.print("¸Ş´º¼±ÅÃ :");
+			System.out.print("ë©”ë‰´ì„ íƒ :");
 			int menu = sc.nextInt();
 
 			if (menu == 1) {
-				System.out.println("Lotto ±¸ÀÔ ½ÃÀÛ");
-				System.out.println("1000¿ø¿¡ ·Î¶Ç¹øÈ£ ÇÏ³ªÀÔ´Ï´Ù.");
-				System.out.print("±İ¾× ÀÔ·Â :");
+				System.out.println("Lotto êµ¬ì… ì‹œì‘");
+				System.out.println("1000ì›ì— ë¡œë˜ë²ˆí˜¸ í•˜ë‚˜ì…ë‹ˆë‹¤.");
+				System.out.print("ê¸ˆì•¡ ì…ë ¥ :");
 				int money = sc.nextInt();
 				if (money < 1000) {
-					System.out.println("±İ¾×ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+					System.out.println("ê¸ˆì•¡ì´ ë¶€ì¡±í•©ë‹ˆë‹¤.");
 				} else {
 					int count = money / 1000;
 					int remaind = money % 1000;
-					System.out.println("Çà¿îÀÇ ·Î¶Ç¹øÈ£´Â ¾Æ·¡¿Í °°½À´Ï´Ù.");
+					System.out.println("í–‰ìš´ì˜ ë¡œë˜ë²ˆí˜¸ëŠ” ì•„ë˜ì™€ ê°™ìŠµë‹ˆë‹¤.");
 					for (int i = 1; i <= count; i++) {
 						TreeSet<Integer> ts = new TreeSet<Integer>();
 
@@ -46,14 +46,14 @@ public class Lotto {
 							int num = (int) (Math.random() * 45 + 1);
 							ts.add(num);
 						}
-						System.out.println("·Î¶Ç¹øÈ£"+i+" :" + ts);
+						System.out.println("ë¡œë˜ë²ˆí˜¸"+i+" :" + ts);
 						
 					}
-					System.out.println("\n¹ŞÀº±İ¾×Àº " + money + "¿øÀÌ°í °Å½º¸§µ·Àº " + remaind + "¿øÀÔ´Ï´Ù.\n");
+					System.out.println("\në°›ì€ê¸ˆì•¡ì€ " + money + "ì›ì´ê³  ê±°ìŠ¤ë¦„ëˆì€ " + remaind + "ì›ì…ë‹ˆë‹¤.\n");
 				}
 
 			} else {
-				System.out.println("°¨»çÇÕ´Ï´Ù");
+				System.out.println("ê°ì‚¬í•©ë‹ˆë‹¤");
 				run = false;
 			}
 		}

@@ -11,16 +11,16 @@ public class StudentHw {
 	public static void main(String[] args) {
 		ArrayList<Student> memList = new ArrayList<Student>();
 
-		memList.add(new Student("20205555", "È«±æµ¿", 80, 90, 70));
-		memList.add(new Student("20207777", "ÀÌ¼ø½Å", 100, 50, 80));
-		memList.add(new Student("20206666", "°­°¨Âù", 95, 40, 90));
-		memList.add(new Student("20203333", "º¯ÇĞµµ", 80, 70, 60));
-		memList.add(new Student("20208888", "ÀÏÁö¸Å", 50, 70, 60));
-		memList.add(new Student("20202222", "±èÀ¯½Å", 70, 70, 70));
-		memList.add(new Student("20204444", "Á¤µµÀü", 80, 90, 70));
-		memList.add(new Student("20201111", "ÀÌ¼º°è", 80, 100, 80));
+		memList.add(new Student("20205555", "í™ê¸¸ë™", 80, 90, 70));
+		memList.add(new Student("20207777", "ì´ìˆœì‹ ", 100, 50, 80));
+		memList.add(new Student("20206666", "ê°•ê°ì°¬", 95, 40, 90));
+		memList.add(new Student("20203333", "ë³€í•™ë„", 80, 70, 60));
+		memList.add(new Student("20208888", "ì¼ì§€ë§¤", 50, 70, 60));
+		memList.add(new Student("20202222", "ê¹€ìœ ì‹ ", 70, 70, 70));
+		memList.add(new Student("20204444", "ì •ë„ì „", 80, 90, 70));
+		memList.add(new Student("20201111", "ì´ì„±ê³„", 80, 100, 80));
 
-		System.out.println("ÇĞ¹øÀÇ ¿À¸§Â÷¼øÀ¸·Î Á¤·Ä");
+		System.out.println("í•™ë²ˆì˜ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬");
 		System.out.println("----------------------------------------------------"
 				+ "------------------------------------------------");
 		Collections.sort(memList);
@@ -30,7 +30,7 @@ public class StudentHw {
 		System.out.println("----------------------------------------------------"
 				+ "------------------------------------------------");
 
-		System.out.println("ÃÑÁ¡ÀÇ ¿ª¼øÀ¸·Î Á¤·Ä");
+		System.out.println("ì´ì ì˜ ì—­ìˆœìœ¼ë¡œ ì •ë ¬");
 		Collections.sort(memList, new Desc());
 		for (Student Student : memList) {
 			System.out.println(Student);
@@ -151,11 +151,8 @@ class Desc implements Comparator<Student> {
 
 		@Override
 		public String toString() {
-			return "Student ÇĞ¹ø: " + id + ", ÀÌ¸§: " + name + ", ±¹¾îÁ¡¼ö: " + language + ", ¿µ¾îÁ¡¼ö: " + english + ", ¼öÇĞÁ¡¼ö: "
-					+ math + ", ÃÑÁ¡: " + getTotalScore() + ", µî¼ö: " + rank;
+			return "Student í•™ë²ˆ: " + id + ", ì´ë¦„: " + name + ", êµ­ì–´ì ìˆ˜: " + language + ", ì˜ì–´ì ìˆ˜: " + english + ", ìˆ˜í•™ì ìˆ˜: "
+					+ math + ", ì´ì : " + getTotalScore() + ", ë“±ìˆ˜: " + rank;
 		}
 
 	}
-
-
-

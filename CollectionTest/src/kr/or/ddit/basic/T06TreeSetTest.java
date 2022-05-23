@@ -8,55 +8,54 @@ import java.util.TreeSet;
 
 public class T06TreeSetTest {
 	public static void main(String[] args) {
-		// TreeSetÀº ÀÚµ¿ Á¤·Ä ±â´ÉÀÌ µé¾î°¡ ÀÖ´Ù.
+		// TreeSetì€ ìë™ ì •ë ¬ ê¸°ëŠ¥ì´ ë“¤ì–´ê°€ ìˆë‹¤.
 		
 		TreeSet<String> ts = new TreeSet<String>();
 		
 		List<String> abcList = new ArrayList<String>();
 		
-		//¿µ¾î ´ë¹®ÀÚ¸¦ ¹®ÀÚ¿­·Î º¯È¯ÇÏ¿© List¿¡ ÀúÀåÇÏ±â
+		//ì˜ì–´ ëŒ€ë¬¸ìë¥¼ ë¬¸ìì—´ë¡œ ë³€í™˜í•˜ì—¬ Listì— ì €ì¥í•˜ê¸°
 		for(char ch = 'A'; ch<='Z'; ch++) {
 			String temp = String.valueOf(ch);
 			abcList.add(temp);
 		}
 		Collections.shuffle(abcList);
 		
-		System.out.println("abcList ÀÚ·á :" + abcList);
+		System.out.println("abcList ìë£Œ :" + abcList);
 		
 		for(String str : abcList) {
 			ts.add(str);
 		}
-		System.out.println("TreeSet ÀÚ·á : " +ts);
+		System.out.println("TreeSet ìë£Œ : " +ts);
 		
-		// TreeSet¿¡ ÀúÀåµÈ ÀÚ·á Áß Æ¯Á¤ÇÑ ÀÚ·áº¸´Ù ÀÛÀº ÀÚ·á¸¦ Ã£¾Æ¼­
-				// SortedSetÀ¸·Î ¹İÈ¯ÇÏ´Â ¸Ş¼Òµå°¡ ÀÖ´Ù.
-				// => headSet(±âÁØ°ª) : ±âº»ÀûÀ¸·Î '±âÁØ°ª' ¹ÌÆ÷ÇÔ
-				// => headSet(±âÁØ°ª, ³í¸®°ª) : ³í¸®°ªÀÌ trueÀÌ¸é '±âÁØ°ª' Æ÷ÇÔ.
+		// TreeSetì— ì €ì¥ëœ ìë£Œ ì¤‘ íŠ¹ì •í•œ ìë£Œë³´ë‹¤ ì‘ì€ ìë£Œë¥¼ ì°¾ì•„ì„œ
+				// SortedSetìœ¼ë¡œ ë°˜í™˜í•˜ëŠ” ë©”ì†Œë“œê°€ ìˆë‹¤.
+				// => headSet(ê¸°ì¤€ê°’) : ê¸°ë³¸ì ìœ¼ë¡œ 'ê¸°ì¤€ê°’' ë¯¸í¬í•¨
+				// => headSet(ê¸°ì¤€ê°’, ë…¼ë¦¬ê°’) : ë…¼ë¦¬ê°’ì´ trueì´ë©´ 'ê¸°ì¤€ê°’' í¬í•¨.
 				SortedSet<String> ss1 = ts.headSet("K");
-				System.out.println("K ÀÌÀü ÀÚ·á : " + ss1); // ±âÁØ°ª ¹ÌÆ÷ÇÔ.
-				System.out.println("K ÀÌÀü ÀÚ·á(±âÁØ°ª Æ÷ÇÔ) : "
+				System.out.println("K ì´ì „ ìë£Œ : " + ss1); // ê¸°ì¤€ê°’ ë¯¸í¬í•¨.
+				System.out.println("K ì´ì „ ìë£Œ(ê¸°ì¤€ê°’ í¬í•¨) : "
 						+ ts.headSet("K", true));
 				
-				// '±âÁØ°ª' º¸´Ù Å« ÀÚ·á¸¦ Ã£¾Æ SortedSetÀ¸·Î ¹İÈ¯ÇÏ´Â ¸Ş¼Òµå
-				// tailSet(±âÁØ°ª) : ±âº»ÀûÀ¸·Î '±âÁØ°ª' Æ÷ÇÔ.
-				// tailSet(±âÁØ°ª, ³í¸®°ª) : ³í¸®°ªÀÌ falseÀÌ¸é '±âÁØ°ª' ¹ÌÆ÷ÇÔ
+				// 'ê¸°ì¤€ê°’' ë³´ë‹¤ í° ìë£Œë¥¼ ì°¾ì•„ SortedSetìœ¼ë¡œ ë°˜í™˜í•˜ëŠ” ë©”ì†Œë“œ
+				// tailSet(ê¸°ì¤€ê°’) : ê¸°ë³¸ì ìœ¼ë¡œ 'ê¸°ì¤€ê°’' í¬í•¨.
+				// tailSet(ê¸°ì¤€ê°’, ë…¼ë¦¬ê°’) : ë…¼ë¦¬ê°’ì´ falseì´ë©´ 'ê¸°ì¤€ê°’' ë¯¸í¬í•¨
 				SortedSet<String> ss2 = ts.tailSet("K");
-				System.out.println("K ÀÌÈÄ ÀÚ·á : " + ss2); // ±âÁØ°ª Æ÷ÇÔ
-				System.out.println("K ÀÌÈÄ ÀÚ·á :(±âÁØ°ª ¹ÌÆ÷ÇÔ) : "
+				System.out.println("K ì´í›„ ìë£Œ : " + ss2); // ê¸°ì¤€ê°’ í¬í•¨
+				System.out.println("K ì´í›„ ìë£Œ :(ê¸°ì¤€ê°’ ë¯¸í¬í•¨) : "
 									+ ts.tailSet("K", false));
 				
-				// subSet(±âÁØ°ª1, ±âÁØ°ª2) : ±âÁØ°ªÀÌ1~±âÁØ°ª2 »çÀÌÀÇ °ªÀ» °¡Á®¿È.
-				//							('±âÁØ°ª1'Æ÷ÇÔ, '±âÁØ°ª2' ¹ÌÆ÷ÇÔ)
-				// subSet(±âÁØ°ª1, ³í¸®°ª1, ±âÁØ°ª2, ³í¸®°ª2)
-				// => °¢ ±âÁØ°ªÀ» Æ÷ÇÔÇÒÁö ¿©ºÎ¸¦ ¼³Á¤ÇÑ´Ù.(³í¸®°ªÀÌ trueÀÌ¸é Æ÷ÇÔ.)
-				System.out.println("K(Æ÷ÇÔ)ºÎÅÍ N(¹ÌÆ÷ÇÔ)±îÁö :"
+				// subSet(ê¸°ì¤€ê°’1, ê¸°ì¤€ê°’2) : ê¸°ì¤€ê°’ì´1~ê¸°ì¤€ê°’2 ì‚¬ì´ì˜ ê°’ì„ ê°€ì ¸ì˜´.
+				//							('ê¸°ì¤€ê°’1'í¬í•¨, 'ê¸°ì¤€ê°’2' ë¯¸í¬í•¨)
+				// subSet(ê¸°ì¤€ê°’1, ë…¼ë¦¬ê°’1, ê¸°ì¤€ê°’2, ë…¼ë¦¬ê°’2)
+				// => ê° ê¸°ì¤€ê°’ì„ í¬í•¨í• ì§€ ì—¬ë¶€ë¥¼ ì„¤ì •í•œë‹¤.(ë…¼ë¦¬ê°’ì´ trueì´ë©´ í¬í•¨.)
+				System.out.println("K(í¬í•¨)ë¶€í„° N(ë¯¸í¬í•¨)ê¹Œì§€ :"
 								+ ts.subSet("K", "N"));	
-				System.out.println("K(Æ÷ÇÔ)ºÎÅÍ N(Æ÷ÇÔ)±îÁö :"
+				System.out.println("K(í¬í•¨)ë¶€í„° N(í¬í•¨)ê¹Œì§€ :"
 						+ ts.subSet("K", true, "N", true));	
-				System.out.println("K(¹ÌÆ÷ÇÔ)ºÎÅÍ N(¹ÌÆ÷ÇÔ)±îÁö :"
+				System.out.println("K(ë¯¸í¬í•¨)ë¶€í„° N(ë¯¸í¬í•¨)ê¹Œì§€ :"
 						+ ts.subSet("K", false, "N", false));		
-				System.out.println("K(¹ÌÆ÷ÇÔ)ºÎÅÍ N(Æ÷ÇÔ)±îÁö :"
+				System.out.println("K(ë¯¸í¬í•¨)ë¶€í„° N(í¬í•¨)ê¹Œì§€ :"
 						+ ts.subSet("K", false, "N", true));		
 }
 			}
-			
