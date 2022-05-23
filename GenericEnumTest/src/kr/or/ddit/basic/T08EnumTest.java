@@ -2,7 +2,7 @@ package kr.or.ddit.basic;
 
 public class T08EnumTest {
 /*
-    열거형 => 상수값들을 선언하는 바업ㅂ
+    열거형 => 상수값들을 선언하는 방법
     
     static final int A = 0;
     static final int B = 1;
