@@ -2,14 +2,14 @@ package kr.or.ddit.basic;
 
 public class T01ArgsTest {
 /*
-    °¡º¯Çü ÀÎ¼ö => ¸Å¼ÒµåÀÇ ¸Å°³º¯¼öÀÇ °³¼ö°¡ ½ÇÇàµÉ ¶§¸¶´Ù ´Ù¸¦ ¶§ »ç¿ëÇÑ´Ù.
+    ê°€ë³€í˜• ì¸ìˆ˜ => ë§¤ì†Œë“œì˜ ë§¤ê°œë³€ìˆ˜ì˜ ê°œìˆ˜ê°€ ì‹¤í–‰ë  ë•Œë§ˆë‹¤ ë‹¤ë¥¼ ë•Œ ì‚¬ìš©í•œë‹¤.
     
-     - °¡º¯Çü ÀÎ¼ö´Â ¸Å¼Òµå ¾È¿¡¼­´Â ¹è¿­·Î Ã³¸®µÈ´Ù.
-     - °¡º¯Çü ÀÎ¼ö´Â ÇÑ°¡Áö ÀÚ·áÇü¸¸ »ç¿ëÇÒ ¼ö ÀÖ´Ù.
+     - ê°€ë³€í˜• ì¸ìˆ˜ëŠ” ë§¤ì†Œë“œ ì•ˆì—ì„œëŠ” ë°°ì—´ë¡œ ì²˜ë¦¬ëœë‹¤.
+     - ê°€ë³€í˜• ì¸ìˆ˜ëŠ” í•œê°€ì§€ ìžë£Œí˜•ë§Œ ì‚¬ìš©í•  ìˆ˜ ìžˆë‹¤.
 */
-	// ¹è¿­À» ÀÌ¿ëÇÑ ¸Å¼Òµå
-	// ¸Å°³º¯¼ö·Î ¹ÞÀº Á¤¼öµéÀÇ ÇÕ°è¸¦ ±¸ÇÏ´Â ¸Å¼Òµå
-	// (ÀÌ Á¤¼öµéÀÇ °³¼ö´Â »óÈ²¿¡ µû¶ó ´Ù¸£´Ù)
+	// ë°°ì—´ì„ ì´ìš©í•œ ë§¤ì†Œë“œ
+	// ë§¤ê°œë³€ìˆ˜ë¡œ ë°›ì€ ì •ìˆ˜ë“¤ì˜ í•©ê³„ë¥¼ êµ¬í•˜ëŠ” ë§¤ì†Œë“œ
+	// (ì´ ì •ìˆ˜ë“¤ì˜ ê°œìˆ˜ëŠ” ìƒí™©ì— ë”°ë¼ ë‹¤ë¥´ë‹¤)
 	public int sumArr(int[] data) {
 		int sum = 0;
 		for(int i=0; i<data.length; i++) {
@@ -18,7 +18,7 @@ public class T01ArgsTest {
 		return sum;
 	}
 	
-	// °¡º¯Çü ÀÎ¼ö¸¦ ÀÌ¿ëÇÑ ¸Å¼Òµå
+	// ê°€ë³€í˜• ì¸ìˆ˜ë¥¼ ì´ìš©í•œ ë§¤ì†Œë“œ
 	public int sumArg(int...data) {
 		int sum = 0;
 		for(int i=0; i<data.length; i++) {
@@ -27,14 +27,14 @@ public class T01ArgsTest {
 		return sum;
 	}
 	
-	// °¡º¯Çü ÀÎ¼ö¿Í ÀÏ¹ÝÀûÀÎ ÀÎ¼ö¸¦ °°ÀÌ »ç¿ëÇÒ °æ¿ì¿¡´Â 
-	// °¡º¯Çü ÀÎ¼ö¸¦ Á¦ÀÏ µÚÂÊ¿¡ ¹èÄ¡ÇØ¾ß ÇÑ´Ù.
+	// ê°€ë³€í˜• ì¸ìˆ˜ì™€ ì¼ë°˜ì ì¸ ì¸ìˆ˜ë¥¼ ê°™ì´ ì‚¬ìš©í•  ê²½ìš°ì—ëŠ” 
+	// ê°€ë³€í˜• ì¸ìˆ˜ë¥¼ ì œì¼ ë’¤ìª½ì— ë°°ì¹˜í•´ì•¼ í•œë‹¤.
 	public String sumArg2(String name, int...data) {
 		int sum = 0;
 		for(int i=0; i<data.length; i++) {
 			sum += data[i];
 		}
-		return name + "¾¾ Á¡¼ö : " + sum;
+		return name + "ì”¨ ì ìˆ˜ : " + sum;
 	}
 	
 	public static void main(String[] args) {
@@ -50,7 +50,7 @@ public class T01ArgsTest {
 		System.out.println(at.sumArg(1,2,3,4,5));
 		System.out.println();
 		
-		System.out.println(at.sumArg2("È«±æµ¿", 1,2,3,4,5,6,7,8,9));
+		System.out.println(at.sumArg2("í™ê¸¸ë™", 1,2,3,4,5,6,7,8,9));
 	
 		
 		

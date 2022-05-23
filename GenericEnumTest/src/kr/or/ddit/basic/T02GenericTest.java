@@ -3,22 +3,22 @@ package kr.or.ddit.basic;
 import java.util.Map;
 
 /*
-	Á¦³Ê¸± Å¬·¡½º ¸¸µå´Â ¹æ¹ı
+	ì œë„ˆë¦´ í´ë˜ìŠ¤ ë§Œë“œëŠ” ë°©ë²•
 	
-	Çü½Ä)
-	 class Å¬·¡½º¸í<Á¦³Ê¸¯Å¸ÀÔ±ÛÀÚ> {
-	  	Á¦³Ê¸¯Å¸ÀÔ±ÛÀÚ º¯¼ö¸í; // º¯¼ö ¼±¾ğ¿¡ Á¦³Ê¸¯À» »ç¿ëÇÒ °æ¿ì
+	í˜•ì‹)
+	 class í´ë˜ìŠ¤ëª…<ì œë„ˆë¦­íƒ€ì…ê¸€ì> {
+	  	ì œë„ˆë¦­íƒ€ì…ê¸€ì ë³€ìˆ˜ëª…; // ë³€ìˆ˜ ì„ ì–¸ì— ì œë„ˆë¦­ì„ ì‚¬ìš©í•  ê²½ìš°
 	  	 	...
 	  	 
-	  	 Á¦³Ê¸¯Å¸ÀÔ±ÛÀÚ ¸Ş¼Òµå¸í() { // ¹İÈ¯°ªÀÌ ÀÖ´Â ¸Ş¼Òµå¿¡¼­ »ç¿ë
+	  	 ì œë„ˆë¦­íƒ€ì…ê¸€ì ë©”ì†Œë“œëª…() { // ë°˜í™˜ê°’ì´ ìˆëŠ” ë©”ì†Œë“œì—ì„œ ì‚¬ìš©
 	  	 	...
 	  	 
-	  	 	return °ª;
+	  	 	return ê°’;
 	  	 }
 	  	 ...
 	  }
 	  
-	-- Á¦³Ê¸¯Å¸ÀÔ±ÛÀÚ --
+	-- ì œë„ˆë¦­íƒ€ì…ê¸€ì --
 	T => Type
 	K => Key
 	V => Value
@@ -56,28 +56,28 @@ public class T02GenericTest {
 	public static void main(String[] args) {
 		
 		NonGenericClass ng1 = new NonGenericClass();
-		ng1.setVal("°¡³ª´Ù¶ó");
+		ng1.setVal("ê°€ë‚˜ë‹¤ë¼");
 		
 		NonGenericClass ng2 = new NonGenericClass();
 		ng2.setVal(100);
 		
 		String rtnVal1 = (String) ng1.getVal();
-		System.out.println("¹®ÀÚ¿­ ¹İÈ¯°ª rtnNg1 => "+ rtnVal1);
+		System.out.println("ë¬¸ìì—´ ë°˜í™˜ê°’ rtnNg1 => "+ rtnVal1);
 		
 		Integer irtnVal2 = (Integer) ng2.getVal();
-		System.out.println("Á¤¼ö ¹İÈ¯°ª irtnVal2 => " + irtnVal2);
+		System.out.println("ì •ìˆ˜ ë°˜í™˜ê°’ irtnVal2 => " + irtnVal2);
 		System.out.println();
 		
 		MyGeneric<String> mg1 = new MyGeneric<String>();
 		MyGeneric<Integer> mg2 = new MyGeneric<Integer>();
 		
-		mg1.setVal("¿ì¸®³ª¶ó");
+		mg1.setVal("ìš°ë¦¬ë‚˜ë¼");
 		mg2.setVal(500);
 		
 		rtnVal1 = mg1.getVal();
 		irtnVal2 = mg2.getVal();
 		
-		System.out.println("Á¦³Ê¸¯ ¹®ÀÚ¿­ ¹İÈ¯°ª : " + rtnVal1);
-		System.out.println("Á¦³Ê¸¯ Á¤¼öÇü ¹İÈ¯°ª : " + irtnVal2);
+		System.out.println("ì œë„ˆë¦­ ë¬¸ìì—´ ë°˜í™˜ê°’ : " + rtnVal1);
+		System.out.println("ì œë„ˆë¦­ ì •ìˆ˜í˜• ë°˜í™˜ê°’ : " + irtnVal2);
 		}
 }
