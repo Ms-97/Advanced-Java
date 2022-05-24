@@ -19,9 +19,9 @@ public class T08ThreadPriorityTest {
 		// 우선 순위는 start()메서드를 호출하기 전에 설정해야 한다.
 		for(int i=0; i < ths.length; i++) {
 			if(i == 5) {
-				ths[i].setPriority(10);
-			}else {
 				ths[i].setPriority(1);
+			}else {
+				ths[i].setPriority(10);
 			}
 		}
 		
