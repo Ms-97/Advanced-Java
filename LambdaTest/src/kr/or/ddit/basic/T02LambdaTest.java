@@ -1,5 +1,8 @@
 package kr.or.ddit.basic;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class T02LambdaTest {
 	public static void main(String[] args) {
 		// 람다식을 사용하지 않았을 경우...
@@ -45,6 +48,65 @@ public class T02LambdaTest {
  	6) 실행문에 return문만 있을 경우 return명령과 '{}'를 생략 할 수 있다.
  	예) (a, b) -> a + b
  */
+		LambdaTestInterface2 lam3 = 
+				(int z) -> {
+					int result = z + 100;
+					System.out.println("result = " + result);
+				};
+		lam3.test(30);
 		
+		LambdaTestInterface2 lam4 =
+				z -> {
+					int result = z + 300;
+					System.out.println("result = " + result);
+				};
+		lam4.test(60);
+		
+		LambdaTestInterface2 lam5 = 
+				z -> System.out.println("result = " + (z+500));
+		lam5.test(90);
+		
+		System.out.println("------------------------------------");
+		//==========================================================
+		
+		LambdaTestInterface3 lam6 =
+			(int x, int y) -> {
+				int r = x + y;
+				return r;
+			};
+		int k = lam6.test(20, 50);
+		System.out.println("k = " + k);
+		
+		LambdaTestInterface3 lam7 =
+			(x, y) -> {
+				return x + y;
+			};
+		k = lam7.test(80, 50);
+		
+		LambdaTestInterface3 lam8 =
+			(x, y) -> x + y;
+		k = lam8.test(100, 200);
+		System.out.println("k = " + k);
+		
+		LambdaTestInterface3 lam9 =
+			(x, y) -> x > y ? x : y;
+		k = lam9.test(100, 200);
+		System.out.println("k = " + k);
+	
+	
+	// =======================================
+	
+	List<String> strList = new ArrayList<String>();
+	strList.add("홍길동");
+	strList.add("이몽룡");
+	strList.add("이순신");
+	strList.add("일지매");
+	strList.add("변학도");
+	
+	for(String str : strList) {
+		System.out.println(str);
 	}
+	
+	strList.forEach(str -> System.out.println(str));
+  }
 }
