@@ -24,6 +24,7 @@ public class fileCopy {
 			}
 		}else {
 			System.out.println(f1.getAbsolutePath() + "은 없는 파일입니다.");
+			System.out.println("원본파일이 없으므로 ("+ f2.getName() + ")을 복사 실패했습니다.");
 			
 		}
 	}
