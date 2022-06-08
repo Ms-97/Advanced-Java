@@ -49,7 +49,7 @@ public class MemberInfoMain {
 	private Scanner scan = new Scanner(System.in); 
 	
 	public MemberInfoMain() {
-		memService = new MemberSeriveImpl();
+		memService = MemberSeriveImpl.getInstance();
 	}
 	
 	

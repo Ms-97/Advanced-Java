@@ -18,6 +18,21 @@ public class MemberDAOImpl implements IMemberDAO {
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 
+	private static IMemberDAO memDao;
+	
+	private MemberDAOImpl() {
+		
+	}
+	
+	public static IMemberDAO getInstance() {
+		if(memDao == null) {
+			memDao = new MemberDAOImpl();
+		}
+		
+		return memDao;
+	}
+
+	
 	@Override
 	public int insertMember(MemberVO mv) {
 		

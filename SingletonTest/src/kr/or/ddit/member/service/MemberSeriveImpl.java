@@ -8,12 +8,21 @@ import kr.or.ddit.member.vo.MemberVO;
 
 public class MemberSeriveImpl implements IMemberService {
 	
-	private IMemberDAO memDao;
+private IMemberDAO memDao;
 	
-	public MemberSeriveImpl() {
-		memDao = new MemberDAOImpl();
+	private static IMemberService memService;
+	
+	private MemberSeriveImpl() {
+		memDao = MemberDAOImpl.getInstance();
 	}
 	
+	public static IMemberService getInstance() {
+		if(memService == null) {
+			memService = new MemberSeriveImpl();
+		}
+		
+		return memService;
+	}
 	
 	@Override
 	public int registMember(MemberVO mv) {
