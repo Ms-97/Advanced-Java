@@ -8,8 +8,6 @@
  <settings>
  	<!-- DB 컬럼명을 낙타표기법으로 속성명과 자동 매핑하도록 설정하기 -->
  	<setting name="mapUnderscoreToCamelCase" value="true"/>
- 	
- 	<setting name="logImpl" value="LOG4J"/>
  </settings>
  
  <typeAliases>
@@ -31,7 +29,6 @@
  <mappers>
  	<mapper resource="kr/or/ddit/basic/memberTest.xml"/>
  	<mapper resource="mapper/member.xml"/>
- 	<mapper resource="mapper/member2.xml"/>
  </mappers>
  
  
