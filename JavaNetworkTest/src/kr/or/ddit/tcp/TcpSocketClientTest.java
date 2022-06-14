@@ -8,7 +8,7 @@ import java.net.Socket;
 
 public class TcpSocketClientTest {
 	public static void main(String[] args) throws IOException{
-		String serverIp = "127.0.0.1";
+		String serverIp = "192.168.141.24";
 		//자기자신을 나타내는 방법
 		//IP : 172.0.0.1
 		//컴이름 : localhost
