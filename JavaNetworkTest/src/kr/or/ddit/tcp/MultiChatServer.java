@@ -56,7 +56,7 @@ public class MultiChatServer {
 	}
 	
 	/**
-	 * 대화방 즉, Map에 저장된 전체 유저에게 안내메시지를 전송하는 메서드
+	 * 대화방 즉, Map에 저장된 전체 유저에게 안내메시지를 전송하는 메소드
 	 * @param msg 안내 메시지
 	 */
 	public void sendMessage(String msg) {
@@ -78,7 +78,7 @@ public class MultiChatServer {
 	}
 	
 	/**
-	 * 대화방 즉, Map에 저장된 전체 유저에게 대화 메시지를 전송하는 메서드
+	 * 대화방 즉, Map에 저장된 전체 유저에게 대화 메시지를 전송하는 메소드
 	 * @param msg
 	 * @param from
 	 */
