@@ -20,7 +20,7 @@ public class UdpFileSender {
 			ds = new DatagramSocket();
 			this.port = port;
 			this.receiverAddr = InetAddress.getByName(receiverIp);
-			file = new File("d:/D_Other/a.png");
+			file = new File("d:/D_Other/noname.png");
 			
 			if(!file.exists()) {
 				System.out.println("해당 파일이 존재하지 않습니다.");
@@ -105,6 +105,6 @@ public class UdpFileSender {
 	}
 	
 	public static void main(String[] args) {
-		new UdpFileSender("192.168.141.3", 8888).start();
+		new UdpFileSender("192.168.141.33", 8888).start();
 	}
 }
